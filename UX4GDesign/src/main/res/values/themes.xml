@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyDesignSystem" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Apply Colors -->
+        <item name="android:colorPrimary">@color/colorSecondary</item>
+
+        <item name="android:colorBackground">@color/white</item>
+
+        <!-- Apply Typography -->
+        <item name="android:textViewStyle">@style/TextStyle.Body</item>
+
+        <!-- Apply Button Styles -->
+<!--        <item name="android:buttonStyle">@style/MyDesign_ButtonStyle_Primary</item>-->
+
+    </style>
+<!--    <include layout="@layout/custom_button"/>-->
+</resources>
