@@ -27,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
@@ -47,5 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 //    implementation(project(":UX4GDesign"))
 //    implementation("com.github.shankar51689:CustomDesignDemo:1.0.0")
-//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.1")
+//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.2")
 }
