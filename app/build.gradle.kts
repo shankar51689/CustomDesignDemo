@@ -46,5 +46,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 //    implementation(project(":UX4GDesign"))
-    implementation("com.github.shankar51689:CustomDesignDemo:1.0.0")
+//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.0")
+//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.1")
 }
