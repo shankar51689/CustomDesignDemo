@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.drawerlayout.widget.DrawerLayout
+    <!--<androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Main Content -->
+        &lt;!&ndash; Main Content &ndash;&gt;
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- App Bar with Toolbar -->
+            &lt;!&ndash; App Bar with Toolbar &ndash;&gt;
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -27,7 +27,7 @@
                     android:title="My App" />
             </com.google.android.material.appbar.AppBarLayout>
 
-            <!-- Content Layout -->
+            &lt;!&ndash; Content Layout &ndash;&gt;
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -39,7 +39,7 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- EditText height should be 48dp -->
+                    &lt;!&ndash; EditText height should be 48dp &ndash;&gt;
                     <androidx.appcompat.widget.AppCompatEditText
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
@@ -51,7 +51,7 @@
                         style="@style/UX4GTheme.CustomEditText"
                         android:hint="Enter text" />
 
-                    <!-- Button -->
+                    &lt;!&ndash; Button &ndash;&gt;
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -79,12 +79,12 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <!--<androidx.appcompat.widget.AppCompatImageView
+                        &lt;!&ndash;<androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/spinner"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/dots"
-                            />-->
+                            />&ndash;&gt;
 
                     </LinearLayout>
 
@@ -117,16 +117,16 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <!--<androidx.appcompat.widget.AppCompatImageView
+                        &lt;!&ndash;<androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/spinner"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/dots"
-                            />-->
+                            />&ndash;&gt;
 
                     </LinearLayout>
 
-                    <!-- CardView -->
+                    &lt;!&ndash; CardView &ndash;&gt;
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -165,13 +165,13 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Switch, CheckBox, RadioButton -->
+                    &lt;!&ndash; Switch, CheckBox, RadioButton &ndash;&gt;
                     <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:text="Enable Feature" />
 
-<!--                    style="@style/UX4GTheme.CustomToggleButton1"-->
+&lt;!&ndash;                    style="@style/UX4GTheme.CustomToggleButton1"&ndash;&gt;
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
@@ -204,12 +204,12 @@
                         style="@style/UX4GTheme.CustomRadioButton"
                         android:text="Select Option" />
 
-                    <!-- RecyclerView -->
-                    <!--<androidx.recyclerview.widget.RecyclerView
+                    &lt;!&ndash; RecyclerView &ndash;&gt;
+                    &lt;!&ndash;<androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:background="#f0f0f0" />-->
+                        android:background="#f0f0f0" />&ndash;&gt;
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip1"
@@ -243,14 +243,14 @@
                 </LinearLayout>
             </ScrollView>
 
-            <!-- Bottom Navigation View -->
+            &lt;!&ndash; Bottom Navigation View &ndash;&gt;
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:menu="@menu/bottom_nav_menu" />
         </LinearLayout>
 
-        <!-- Navigation Drawer -->
+        &lt;!&ndash; Navigation Drawer &ndash;&gt;
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationView"
             android:layout_width="wrap_content"
@@ -260,5 +260,5 @@
             app:menu="@menu/drawer_menu" />
 
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>-->
 </layout>

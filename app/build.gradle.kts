@@ -9,7 +9,7 @@ android {
     namespace = "com.example.customdesigndemo"
     compileSdk = 35
 
-    signingConfigs{
+    /*signingConfigs{
         create("release") {
             if (System.getenv("JITPACK") == null) {
                 keyAlias = "customeDesign"
@@ -19,7 +19,7 @@ android {
             }
 
         }
-    }
+    }*/
     
     buildFeatures {
         dataBinding = true
@@ -31,14 +31,14 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-        signingConfig = signingConfigs.getByName("release")
+//        signingConfig = signingConfigs.getByName("release")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            signingConfig  = signingConfigs.getByName("release")
+//            signingConfig  = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

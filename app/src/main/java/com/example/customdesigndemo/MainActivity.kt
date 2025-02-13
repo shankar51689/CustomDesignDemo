@@ -18,7 +18,7 @@ import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.customdesigndemo.databinding.ActivityMainBinding
-import com.ms.compose.ux4gdeisgn2.ui.components.DialogUtils
+//import com.ms.compose.ux4gdeisgn2.ui.components.DialogUtils
 
 //import com.example.ux4gdesign.TextStyle
 //import com.example.ux4gdesign.TypographyManager
@@ -36,12 +36,12 @@ class MainActivity : AppCompatActivity() {
 //        TypographyManager.getTextStyle(this, textView, TextStyle.H1)
 
 
-        binding.tv.text
+        /*binding.tv.text
 //        binding.myChip.text
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)*/
 
         /*binding.ccv.setOnClickListener {
             Log.i("TaG","------------------------")
@@ -57,10 +57,10 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(android.R.drawable.ic_menu_sort_by_size)
 
-        setClickListener()
+//        setClickListener()
     }
 
-    private fun setClickListener() {
+    /*private fun setClickListener() {
         binding.btn3.setOnClickListener {
             DialogUtils.showMaterialDialog(
                 this,
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
             )
 
         }
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
