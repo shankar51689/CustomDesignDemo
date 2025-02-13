@@ -17,7 +17,7 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/red</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="strokeColor">@color/gray</item>
+<!--        <item name="strokeColor">@color/gray</item>-->
 
     </style>
 </resources>
