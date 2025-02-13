@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id ("maven-publish")
 }
 
 android {
@@ -34,6 +35,22 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.shankar51689"
+                artifactId = "CustomDesignDemo"
+                version = "1.0.6"
+
+                // Explicitly include the Android library component
+                from(components.findByName("release") ?: return@create)
+            }
+        }
     }
 }
 
