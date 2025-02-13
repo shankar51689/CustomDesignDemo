@@ -153,6 +153,7 @@
                                 style="@style/UX4GTheme.RoundImageView"
                                 android:src="@drawable/test" />
 
+
                             <com.ms.compose.ux4gdeisgn2.ui.components.CircularImageView
                                 android:layout_width="200dp"
                                 android:layout_height="200dp"
