@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id ("maven-publish")
+    id("kotlin-kapt")
+
 }
 
 android {
