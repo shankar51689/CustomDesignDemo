@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UX4GTheme">
+        <attr name="colorPrimary" format="color" />
+        <attr name="colorOnPrimary" format="color" />
+        <attr name="colorSecondary" format="color" />
+        <attr name="colorOnSecondary" format="color" />
+        <attr name="colorBackground" format="color" />
+        <attr name="colorTextPrimary" format="color" />
+        <attr name="colorTextSecondary" format="color" />
+        <attr name="colorSurface" format="color"/>
+        <attr name="colorOnSurface" format="color"/>
+        <attr name="strokeColor" format="color"/>
+
+<!--        <attr name="fontFamily" format="string"/>-->
+<!--        <attr name="fontFamily" format="reference"/>-->
+<!---->
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomChipView">
+        <attr name="chipText" format="string" />
+        <attr name="chipIcon" format="reference" />
+        <attr name="chipBackgroundColor" format="color"/>
+        <attr name="textColor" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomCanvasView">
+        <attr name="circleColor" format="color"/>
+        <attr name="circleRadius" format="dimension"/>
+        <attr name="circleX" format="dimension"/>
+        <attr name="circleY" format="dimension"/>
+        <attr name="isDraggable" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircularImageView">
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderColor" format="color"/>
+    </declare-styleable>
+
+</resources>

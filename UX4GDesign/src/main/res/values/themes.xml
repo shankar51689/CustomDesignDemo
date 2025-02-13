@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MyDesignSystem" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.UX4GTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Apply Colors -->
-        <item name="android:colorPrimary">@color/colorSecondary</item>
-
-        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorPrimary">?attr/colorPrimary</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorBackground">?attr/colorBackground</item>
 
         <!-- Apply Typography -->
-        <item name="android:textViewStyle">@style/TextStyle.Body</item>
+        <item name="android:textViewStyle">@style/UX4GTheme.H1</item>
 
         <!-- Apply Button Styles -->
-<!--        <item name="android:buttonStyle">@style/MyDesign_ButtonStyle_Primary</item>-->
+        <item name="android:buttonStyle">@style/UX4GTheme.roundFillButton</item>
+<!--        <item name="materialButtonStyle">@style/UX4GTheme.roundFillButton</item>-->
+
+
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:fontFamily">?attr/fontFamily</item>
 
     </style>
-<!--    <include layout="@layout/custom_button"/>-->
+
+
 </resources>

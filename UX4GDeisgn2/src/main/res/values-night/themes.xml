@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.UX4GTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Apply Colors -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorSecondary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+
+        <!-- Apply Typography -->
+        <item name="android:textViewStyle">@style/UX4GTheme.Display</item>
+
+        <!-- Apply Button Styles -->
+        <item name="android:buttonStyle">@style/UX4GTheme.roundFillButton</item>
+        <item name="materialButtonStyle">@style/UX4GTheme.roundFillButton</item>
+
+
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+<!--        <item name="android:fontFamily">?attr/fontFamily</item>-->
+
+    </style>
+
+
+</resources>

@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "CustomDesignDemo"
 include(":app")
 include(":UX4GDesign")
+include(":UX4GDeisgn2")

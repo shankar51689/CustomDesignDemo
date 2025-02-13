@@ -1,58 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--<style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/prima</item>
-        <item name="colorAccent">@color/secondary_color</item>
-        <item name="android:textColorPrimary">@color/text_color</item>
-        <item name="android:windowBackground">@color/background_color</item>
-    </style>-->
-
-    <style name="Typography">
-        <item name="android:textSize">16sp</item>  <!-- Define the base text size -->
-        <item name="android:lineSpacingExtra">4sp</item>  <!-- Line spacing if needed -->
-    </style>
-
-    <style name="Typography.H1">
-        <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">@font/roboto_bold</item>
-    </style>
-
-    <style name="Typography.Body">
-        <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/roboto_regular</item>
+    <style name="UX4GTheme">
+        <item name="colorPrimary">?attr/colorPrimary</item>
+        <item name="colorSecondary">?attr/colorSecondary</item>
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:windowBackground">?attr/colorBackground</item>
+        <item name="backgroundColor">?attr/colorBackground</item>
     </style>
 
     <style name="CustomButton">
         <item name="android:background">@drawable/button_background</item>
-        <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/colorTextPrimary</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
         <item name="android:padding">@dimen/spacing_medium</item>
     </style>
 
-    <style name="TextStyle"/>
-
-    <style name="TextStyle.Heading">
-        <item name="android:textSize">@dimen/text_size_24</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:fontFamily">sans-serif</item>
+<!--    //////////////////////////////// New Components /////////////////////////////////////-->
+    <style name="UX4GTheme.Display" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/text_size_34</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
     </style>
 
-    <style name="TextStyle.Body">
-        <item name="android:textSize">@dimen/text_size_16</item>
-        <item name="android:textColor">@color/gray</item>
-        <item name="android:fontFamily">sans-serif</item>
+    <!-- Headings -->
+    <style name="UX4GTheme.H1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
-    <!--<style name="Theme_Custom_Light" parent="android:Theme.Light">
-        <item name="android:textColor">#000000</item>
-        <item name="android:background">#FFFFFF</item>
+    <style name="UX4GTheme.BodyLarge" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:fontFamily">?attr/fontFamily</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="Theme_Custom_Dark" parent="android:Theme.Black">
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">#121212</item>
-    </style>-->
+    <style name="UX4GTheme.Caption" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+
+<!--    /////////////////////// Componenets /////////////////////////////////-->
+
+    <style name="BaseButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="CustomCheckboxStyle" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/bg_custom_checkbox</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="CustomSwitchStyle" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/bg_custom_switch_thumb</item>
+        <item name="android:track">@drawable/bg_custom_switch_track</item>
+    </style>
+
+
 
 </resources>
