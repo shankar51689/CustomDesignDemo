@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MyDesign_ButtonStyle_Primary">
+    <style name="UX4GTheme.roundFillButton" parent="Widget.MaterialComponents.Button">
         <item name="android:background">@drawable/button_primary</item>
-        <item name="android:textColor">@color/teal_200</item>
-        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
         <item name="android:gravity">center</item>
         <!-- Custom padding values for each side -->
         <item name="android:paddingTop">@dimen/padding_12</item>

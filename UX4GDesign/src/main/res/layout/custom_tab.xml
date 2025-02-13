@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:text="Tab 1"
         android:layout_marginEnd="8dp"
-        android:textColor="@color/primaryColor" />
+        android:textColor="@color/colorPrimary" />
 
     <Button
         android:id="@+id/tab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tab 2"
-        android:textColor="@color/primaryTextColor" />
+        android:textColor="@color/colorTextPrimary" />
 </LinearLayout>

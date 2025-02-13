@@ -1,16 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CustomDesignDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.UX4GTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Apply Colors -->
+        <item name="android:colorPrimary">?attr/colorPrimary</item>
+        <item name="android:colorAccent">?attr/colorSecondary</item>
+        <item name="android:colorBackground">?attr/colorBackground</item>
+
+        <!-- Apply Typography -->
+        <item name="android:textViewStyle">@style/UX4GTheme.H1</item>
+
+        <!-- Apply Button Styles -->
+        <item name="android:buttonStyle">@style/UX4GTheme.roundFillButton</item>
+        <item name="materialButtonStyle">@style/UX4GTheme.roundFillButton</item>
+
+
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:fontFamily">?attr/fontFamily</item>
+
     </style>
+
+
 </resources>
