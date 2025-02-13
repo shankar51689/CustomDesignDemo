@@ -45,7 +45,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.shankar51689"
                 artifactId = "CustomDesignDemo"
-                version = "1.0.6"
+                version = "1.0.0"
 
                 // Explicitly include the Android library component
                 from(components.findByName("release") ?: return@create)
