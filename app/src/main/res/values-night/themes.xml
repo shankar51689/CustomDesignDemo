@@ -2,20 +2,22 @@
     <!-- Base application theme. -->
     <!--<style name="Theme.AppTheme" parent="Theme.UX4GTheme">
         &lt;!&ndash; Primary brand color. &ndash;&gt;
-        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimary">@color/primary_400</item>
         <item name="colorOnPrimary">@color/white</item>
         &lt;!&ndash; Secondary brand color. &ndash;&gt;
-        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/white</item>
     </style>-->
 
-    <style name="Theme.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <style name="Theme.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimary">@color/primary_400</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/white</item>
-
+        <item name="backgroundColor">@color/neutral_50</item>
+        <item name="background">@color/neutral_50</item>
+        <item name="colorSurface">@color/neutral_50</item>
     </style>
 </resources>

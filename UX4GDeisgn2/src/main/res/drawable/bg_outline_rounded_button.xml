@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/rippleEffectColorLight">
+    android:color="@color/rippleEffectColor">
 
     <!-- This is the button's default appearance -->
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@android:color/transparent" /> <!-- No fill -->
-            <stroke android:color="@color/gray" android:width="@dimen/stroke_width_1dp"/>
+            <stroke android:color="@color/neutral_600" android:width="@dimen/stroke_width_1dp"/>
             <corners android:radius="@dimen/medium_round_corner" />
         </shape>
     </item>

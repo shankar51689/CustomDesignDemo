@@ -43,34 +43,27 @@
         android:orientation="horizontal">
 
 
-
-        <androidx.appcompat.widget.AppCompatButton
+        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
             android:id="@+id/btn_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:background="@drawable/outline_round_red_bg"
-            android:textColor="@android:color/holo_red_dark"
-            android:padding="10dp"
-            android:textAlignment="center"
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:layout_marginRight="20dp"
             android:paddingVertical="20dp"/>
 
-
-        <androidx.appcompat.widget.AppCompatButton
+        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton2
             android:id="@+id/btn_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yes"
-            android:background="@drawable/outline_round_red_bg"
-            android:textColor="@android:color/black"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:paddingLeft="10dp"
             android:layout_weight="1"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="20dp"
+            android:paddingVertical="20dp"
+            android:background="@color/success"/>
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

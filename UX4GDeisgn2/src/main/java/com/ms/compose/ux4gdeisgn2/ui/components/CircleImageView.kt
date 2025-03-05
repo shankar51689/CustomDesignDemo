@@ -1,45 +1,8 @@
 package com.ms.compose.ux4gdeisgn2.ui.components
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapShader
-import android.graphics.Color
-import android.graphics.Outline
-import android.graphics.Paint
-import android.graphics.RectF
-import android.util.AttributeSet
-import android.widget.ImageView
-import android.view.ViewOutlineProvider
-
-
-
-import android.view.View
-
-/*class CircularImageView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : androidx.appcompat.widget.AppCompatImageView(context, attrs, defStyleAttr)
-{
-
-
-    init {
-        clipToOutline = true
-        outlineProvider = object : ViewOutlineProvider() {
-            override fun getOutline(view: View, outline: Outline) {
-                val size = Math.min(view.width, view.height) // Use the smallest dimension
-                outline.setOval(0, 0, size, size)
-            }
-        }
-
-        setBackgroundResource(android.R.color.transparent)
-    }
-
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        invalidateOutline() // Recalculate outline when size changes
-    }
-}*/
-
 import android.graphics.*
+import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import com.ms.compose.ux4gdeisgn2.R
 
@@ -49,6 +12,8 @@ class CircularImageView @JvmOverloads constructor(
 
     private var borderWidth = 0f  // Default border width = 0
     private var borderColor = Color.TRANSPARENT // Default border color = Transparent
+    private var cornerRadius = 0f  // Default corner radius for rounded rectangle
+    private var isCircle = true  // Flag to determine if the image is circular or rounded rectangle
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var bitmap: Bitmap? = null
@@ -66,6 +31,8 @@ class CircularImageView @JvmOverloads constructor(
             val typedArray = context.obtainStyledAttributes(it, R.styleable.CircularImageView)
             borderWidth = typedArray.getDimension(R.styleable.CircularImageView_borderWidth, 0f)
             borderColor = typedArray.getColor(R.styleable.CircularImageView_borderColor, Color.GRAY)
+            cornerRadius = typedArray.getDimension(R.styleable.CircularImageView_imageCornerRadius, 0f)
+            isCircle = typedArray.getBoolean(R.styleable.CircularImageView_isCircle, true)
             typedArray.recycle()
         }
         borderPaint.color = borderColor
@@ -78,21 +45,30 @@ class CircularImageView @JvmOverloads constructor(
         val size = Math.min(width, height).toFloat()
         val radius = size / 2f
 
-        // Draw the circular image
+        // Draw the image with the desired shape (circle or rounded rectangle)
         bitmapShader?.let {
             paint.shader = it
-            canvas.drawCircle(radius, radius, radius - borderWidth, paint)
+            if (isCircle) {
+                // Draw circle
+                canvas.drawCircle(radius, radius, radius - borderWidth, paint)
+            } else {
+                // Draw rounded rectangle
+                canvas.drawRoundRect(0f, 0f, size, size, cornerRadius, cornerRadius, paint)
+            }
         }
 
         // Draw the border if borderWidth > 0
         if (borderWidth > 0) {
-            canvas.drawCircle(radius, radius, radius - (borderWidth / 2), borderPaint)
+            if (isCircle) {
+                canvas.drawCircle(radius, radius, radius - (borderWidth / 2), borderPaint)
+            } else {
+                // Ensure the border is drawn correctly for rounded rectangle
+                val borderRadius = cornerRadius
+                // Apply the border width properly on the rounded rectangle
+                borderRect.set(borderWidth, borderWidth, size - borderWidth, size - borderWidth)
+                canvas.drawRoundRect(borderRect, borderRadius, borderRadius, borderPaint)
+            }
         }
-    }
-
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        updateShader()
     }
 
     private fun updateShader() {
@@ -100,11 +76,23 @@ class CircularImageView @JvmOverloads constructor(
         bitmap?.let {
             bitmapShader = BitmapShader(it, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
             val size = Math.min(width, height).toFloat()
-            val radius = size / 2f
-            bitmapRect.set(0f, 0f, size, size)
-            borderRect.set(borderWidth, borderWidth, size - borderWidth, size - borderWidth)
+
+            if (isCircle) {
+                val radius = size / 2f
+                borderRect.set(borderWidth, borderWidth, size - borderWidth, size - borderWidth)
+            } else {
+                // Set border rect for rounded rectangle shape
+                borderRect.set(0f, 0f, size, size) // Same dimensions for the rectangle
+            }
+
             invalidate()
         }
+    }
+
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        updateShader()
     }
 
     private fun getBitmapFromDrawable(): Bitmap? {
@@ -127,7 +115,14 @@ class CircularImageView @JvmOverloads constructor(
         borderPaint.color = borderColor
         invalidate()
     }
+
+    fun setCornerRadius(radius: Float) {
+        cornerRadius = radius
+        invalidate()
+    }
+
+    fun setShape(isCircle: Boolean) {
+        this.isCircle = isCircle
+        invalidate()
+    }
 }
-
-
-

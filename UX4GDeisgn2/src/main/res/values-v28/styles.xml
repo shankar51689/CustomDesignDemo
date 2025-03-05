@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <!-- <style name="UX4GTheme.L1" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:lineHeight">20dp</item>
+        <item name="android:textColor">?attr/colorTextPrimary</item>
+    </style>-->
+</resources>

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">CustomDesignDemo</string>
+    <string name="button">Button</string>
+    <string name="default_text">default</string>
+    <string name="click_me">Click Me</string>
+    <string name="errorbtn">errorBtn</string>
+    <string name="my_app">My App</string>
+    <string name="enter_text">Enter text</string>
+    <string name="start_progress">Start Progress</string>
+    <string name="show_alert_dialog">Show Alert Dialog</string>
+    <string name="hello">hello</string>
+    <string name="this_is_a_cardview">This is a CardView</string>
+    <string name="enable_feature">Enable Feature</string>
+    <string name="text">text</string>
+    <string name="togglebutton">ToggleButton</string>
 </resources>
