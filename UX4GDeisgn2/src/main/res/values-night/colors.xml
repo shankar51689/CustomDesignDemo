@@ -47,7 +47,7 @@
 
     <!--               Primary Colors          -->
 
-    <color name="primary">#613AF5</color>
+    <!--<color name="primary">#613AF5</color>
     <color name="primary_900">#392095</color>
     <color name="primary_800">#4A2BC2</color>
     <color name="primary_700">#5F39E9</color>
@@ -118,7 +118,7 @@
     <color name="neutral_300">#B0B0B0</color>
     <color name="neutral_200">#C6C6C6</color>
     <color name="neutral_100">#DDDDDD</color>
-    <color name="neutral_50">#F3F3F3</color>
+    <color name="neutral_50">#F3F3F3</color>-->
 
 
 </resources>
