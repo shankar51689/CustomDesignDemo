@@ -82,7 +82,7 @@
                             android:text="@string/button"
                             android:textColor="@color/white"
                             android:textAllCaps="false"
-                            app:fb_background="@color/primary" />
+                            app:fb_background="@color/UX4G_primary" />
 
                         <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton
 
@@ -93,7 +93,7 @@
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             app:drawableStart="@drawable/ic_plus"
-                            app:fb_background="@color/danger" />
+                            app:fb_background="@color/UX4G_danger" />
 
                         <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton
 
@@ -104,7 +104,7 @@
                             android:textAllCaps="false"
                             app:drawableEnd="@drawable/ic_down"
                             android:textColor="@color/white"
-                            app:fb_background="@color/success" />
+                            app:fb_background="@color/UX4G_success" />
 
 
 
@@ -137,7 +137,7 @@
                         android:text="@string/button"
                         android:textAllCaps="false"
                         app:cornerRadius="4dp"
-                        app:fb_background="@color/warning" />
+                        app:fb_background="@color/UX4G_warning" />
 
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -153,7 +153,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/primary"
+                            app:buttonColor="@color/UX4G_primary"
                             android:text="@string/button"/>
 
                         <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
@@ -161,7 +161,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/danger"
+                            app:buttonColor="@color/UX4G_danger"
                             app:cob_iconStart="@drawable/ic_plus"
                             app:cob_textPadding="10dp"
                             android:text="@string/button"/>
@@ -171,7 +171,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/success"
+                            app:buttonColor="@color/UX4G_success"
                             app:cob_iconEnd="@drawable/ic_down"
                             android:text="@string/button"/>
 
