@@ -20,10 +20,6 @@ android {
 
         }
     }*/
-    
-    buildFeatures {
-        dataBinding = true
-    }
 
     defaultConfig {
         applicationId = "com.example.customdesigndemo"
@@ -45,6 +41,15 @@ android {
             )
         }
     }
+
+    dataBinding {
+        enable = true
+    }
+/*
+    buildFeatures {
+        dataBinding = true
+    }*/
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -64,7 +69,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-//    implementation(project(":UX4GDeisgn2"))
-//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.6")
+    implementation(project(":UX4GDeisgn2"))
+//    implementation("com.github.shankar51689:CustomDesignDemo:1.0.13")
 //    implementation("com.github.shankar51689:CustomDesignDemo:1.0.3")
 }
