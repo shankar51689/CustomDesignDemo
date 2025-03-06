@@ -19,7 +19,7 @@ import com.ms.compose.ux4gdeisgn2.R
 object DialogUtils {
 
     // Function to show a Material Dialog
-    fun showMaterialDialog(
+   /* fun showMaterialDialog(
         activity: Activity,
         title: String,
         message: String,
@@ -40,7 +40,7 @@ object DialogUtils {
                 dialog.dismiss()
             }
             .show()
-    }
+    }*/
 
     // Function to show a Custom Dialog
     fun showCustomDialog(

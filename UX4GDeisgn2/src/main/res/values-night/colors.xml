@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--<color name="purple_200">#FFBB86FC</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_light">#E6D6FB</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -11,30 +12,37 @@
     <color name="shadowColor">#928C8C</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grayFill">#D7D0D0</color>
+    <color name="lightGray">#EDE9E9</color>
     <color name="silverLight">#EFF1F2FF</color>
+    <color name="lightGray2">#B6B1B1</color>
 
-    &lt;!&ndash; Primary Colors &ndash;&gt;
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="rippleEffectColor">#6A6B6969</color>
+    <color name="rippleEffectColorLight">#3B6B6969</color>
 
-    &lt;!&ndash; Secondary Colors &ndash;&gt;
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#EB8701</color>
+    <color name="colorOnPrimary">#FAEDED</color>
+    <color name="colorPrimaryVariant">#784302</color>
+
+    <!-- Secondary Colors -->
     <color name="colorSecondary">#03DAC5</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorSecondaryVariant">#01B3A1</color>
 
-    &lt;!&ndash; Background & Surface &ndash;&gt;
-    <color name="colorBackground">#353333</color>
-    <color name="colorSurface">#5B5858</color>
-    <color name="colorCardBackground">#A29C9C</color>
+    <!-- Background & Surface -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorSurface">#F5F5F5</color>
+    <color name="colorCardBackground">#FFFFFF</color>
 
-    &lt;!&ndash; Text Colors &ndash;&gt;
-    <color name="colorTextPrimary">#FAF7F7</color>
-    <color name="colorTextSecondary">#A9A5A5</color>
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
 
-    &lt;!&ndash; Error &ndash;&gt;
-    <color name="colorError">#C30225</color>-->
+    <!-- Error -->
+    <color name="colorError">#B00020</color>
 
+    <!--    Success / on-->
+    <color name="colorSuccess">#19AB0E</color>
 
 
     <!--               Primary Colors          -->
