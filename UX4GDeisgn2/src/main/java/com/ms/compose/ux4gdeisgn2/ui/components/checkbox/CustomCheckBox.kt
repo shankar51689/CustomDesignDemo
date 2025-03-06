@@ -3,7 +3,6 @@ package com.ms.compose.ux4gdeisgn2.ui.components.checkbox
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
-import android.os.Build
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.widget.CompoundButton
@@ -29,7 +28,7 @@ class CustomCheckBoxWithLabel @JvmOverloads constructor(
     private var labelTextPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private var uncheckedBackgroundColor = ContextCompat.getColor(context, android.R.color.white)
-    private var checkedBackgroundColor = ContextCompat.getColor(context, R.color.success)
+    private var checkedBackgroundColor = ContextCompat.getColor(context, R.color.UX4G_success)
     private var strokeColor = ContextCompat.getColor(context, android.R.color.black)
     private var strokeWidth = 3f
 

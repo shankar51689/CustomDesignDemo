@@ -6,7 +6,7 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@android:color/transparent" /> <!-- No fill -->
-            <stroke android:color="@color/neutral_600" android:width="@dimen/stroke_width_1dp"/>
+            <stroke android:color="@color/UX4G_neutral_600" android:width="@dimen/stroke_width_1dp"/>
             <corners android:radius="@dimen/medium_round_corner" />
         </shape>
     </item>

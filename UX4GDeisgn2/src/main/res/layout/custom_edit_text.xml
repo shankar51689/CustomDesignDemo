@@ -24,7 +24,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/neutral_50"
+        android:background="@color/UX4G_neutral_50"
         android:orientation="horizontal">
 
         <EditText
@@ -35,8 +35,8 @@
             android:minHeight="48dp"
             android:background="@android:color/transparent"
             android:hint="Enter your email"
-            android:textColorHint="@color/neutral_300"
-            android:textColor="@color/neutral"
+            android:textColorHint="@color/UX4G_neutral_300"
+            android:textColor="@color/UX4G_neutral"
             android:inputType="text"
             android:paddingHorizontal="10dp"
             tools:ignore="LabelFor"
