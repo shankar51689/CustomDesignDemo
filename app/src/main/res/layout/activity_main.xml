@@ -32,6 +32,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
+                <com.example.ux4gdesign.components.CustomButton
+                    android:layout_width=""
+                    android:layout_height=""
+
                 <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
