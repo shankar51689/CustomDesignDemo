@@ -27,6 +27,12 @@ android {
         }
     }
 
+    sourceSets {
+        getByName("main") {
+            res.srcDirs("src/main/res")
+        }
+    }
+
     /*dataBinding {
         enable = true
     }*/
