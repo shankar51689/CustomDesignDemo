@@ -18,8 +18,8 @@ class CircularProgressBar @JvmOverloads constructor(
     private var progress = 50f
     private var maxProgress = 100f
     private var strokeWidth = 10f
-    private var progressColor = ContextCompat.getColor(context, R.color.primary_400)
-    private var backgroundColor = ContextCompat.getColor(context, R.color.primary_100)
+    private var progressColor = ContextCompat.getColor(context, R.color.UX4G_primary_400)
+    private var backgroundColor = ContextCompat.getColor(context, R.color.UX4G_primary_100)
 
     private val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE

@@ -35,7 +35,7 @@ class CustomSwitchButton @JvmOverloads constructor(
         super.onDraw(canvas)
 
         // **Set track color based on state**
-        trackPaint.color = if (isChecked) ContextCompat.getColor(context, R.color.success_500)
+        trackPaint.color = if (isChecked) ContextCompat.getColor(context, R.color.UX4G_success_500)
         else ContextCompat.getColor(context, android.R.color.darker_gray)
 
         // **Draw Track**

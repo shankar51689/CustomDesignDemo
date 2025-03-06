@@ -14,13 +14,11 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import com.ms.compose.ux4gdeisgn2.R
-import com.ms.compose.ux4gdeisgn2.ui.components.Utility.dpToPx
 
 class CustomEditText @JvmOverloads constructor(
     context: Context,
@@ -35,10 +33,10 @@ class CustomEditText @JvmOverloads constructor(
     private val message: TextView
     private val messageIcon: ImageView
 
-    private var errorColor: Int   = ContextCompat.getColor(context, R.color.danger)
-    private var warningColor: Int = ContextCompat.getColor(context, R.color.warning)
-    private var successColor: Int = ContextCompat.getColor(context, R.color.success)
-    private var defaultColor: Int = ContextCompat.getColor(context, R.color.neutral_300)
+    private var errorColor: Int   = ContextCompat.getColor(context, R.color.UX4G_danger)
+    private var warningColor: Int = ContextCompat.getColor(context, R.color.UX4G_warning)
+    private var successColor: Int = ContextCompat.getColor(context, R.color.UX4G_success)
+    private var defaultColor: Int = ContextCompat.getColor(context, R.color.UX4G_neutral_300)
 
     private var borderColor: Int        = defaultColor
     private var borderWidth: Float      = 1f
@@ -194,7 +192,7 @@ class CustomEditText @JvmOverloads constructor(
 
     private fun updateBorder() {
         val borderDrawable = GradientDrawable().apply {
-            setColor(ContextCompat.getColor(context, R.color.neutral_50))
+            setColor(ContextCompat.getColor(context, R.color.UX4G_neutral_50))
             setStroke(borderWidth.toInt(), borderColor)
             cornerRadius = cetCornerRadius
         }

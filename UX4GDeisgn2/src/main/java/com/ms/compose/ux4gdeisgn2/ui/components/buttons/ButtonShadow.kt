@@ -32,7 +32,7 @@ class ShadowButton @JvmOverloads constructor(
                 buttonColor = getColor(R.styleable.ShadowButton_shadowButtonColor, context.getThemeColor(R.attr.colorPrimary))
                 cornerRadius = getDimension(R.styleable.ShadowButton_shadowBtnCornerRadius, 20f)
                 elevationValue = getDimension(R.styleable.ShadowButton_shadowElevation, 10f)
-                rippleColor = getColor(R.styleable.ShadowButton_shadowRippleColor, ContextCompat.getColor(context, R.color.neutral_500))
+                rippleColor = getColor(R.styleable.ShadowButton_shadowRippleColor, ContextCompat.getColor(context, R.color.UX4G_neutral_500))
             } finally {
                 recycle()
             }
