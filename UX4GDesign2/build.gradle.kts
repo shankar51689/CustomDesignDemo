@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id ("maven-publish")
 }
 
 android {
@@ -24,13 +25,29 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.shankar51689"
+                artifactId = "CustomDesignDemo"
+                version = "1.0.0"
+
+                // Explicitly include the Android library component
+                from(components.findByName("release") ?: return@create)
+            }
+        }
+    }
+}
+
 
 dependencies {
 

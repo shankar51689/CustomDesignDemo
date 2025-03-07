@@ -17,6 +17,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import com.example.customdesigndemo.databinding.ActivityMainBinding
+//import com.example.ux4gdesign2.components.DialogUtils
 import com.google.android.material.chip.ChipGroup
 //import com.ms.compose.ux4gdeisgn2.ui.components.DialogUtils
 //import com.ms.compose.ux4gdeisgn2.ui.components.chips.CustomChipView
@@ -46,6 +47,27 @@ class MainActivity : AppCompatActivity() {
         // Enable the drawer toggle icon
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(android.R.drawable.ic_menu_sort_by_size)
+
+
+
+        /*DialogUtils.showCustomDialog(
+            this,
+            binding.btn2View,
+            "Custom Dialog Title ",
+            "This is a custom dialog message.",
+            icon = AppCompatResources.getDrawable(this, R.drawable.ic_launcher_background),
+            positiveButtonText = "OK",
+            negativeButtonText = "Cancel",
+            positiveAction = {
+                // Handle positive button action
+                Toast.makeText(this, "Action confirmed", Toast.LENGTH_SHORT).show()
+            },
+            negativeAction = {
+                // Handle negative button action
+                Toast.makeText(this, "Action canceled", Toast.LENGTH_SHORT).show()
+            }
+        )*/
+
 
         //setClickListener()
     }
