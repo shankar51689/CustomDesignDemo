@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id ("maven-publish")
 }
 
 android {
-    namespace = "com.example.ux4gdesign"
+    namespace = "com.example.ux4gdesign2"
     compileSdk = 35
 
     defaultConfig {
@@ -25,30 +24,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "11"
     }
 }
-
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                groupId = "com.github.shankar51689"
-                artifactId = "CustomDesignDemo"
-                version = "1.0.0"
-
-                // Explicitly include the Android library component
-                from(components.findByName("release") ?: return@create)
-            }
-        }
-    }
-}
-
 
 dependencies {
 

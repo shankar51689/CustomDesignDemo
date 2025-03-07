@@ -1,4 +1,4 @@
-package com.ms.compose.ux4gdeisgn2.ui.components.buttons
+package com.example.ux4gdesign2.components.buttons
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,11 +11,11 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.Gravity
 import androidx.core.graphics.ColorUtils
+import com.example.ux4gdesign2.R
+import com.example.ux4gdesign2.components.Utility.dpToPx
+import com.example.ux4gdesign2.components.Utility.getThemeColor
+import com.example.ux4gdesign2.components.Utility.isPaddingSet
 import com.google.android.material.button.MaterialButton
-import com.ms.compose.ux4gdeisgn2.R
-import com.ms.compose.ux4gdeisgn2.ui.components.Utility.dpToPx
-import com.ms.compose.ux4gdeisgn2.ui.components.Utility.getThemeColor
-import com.ms.compose.ux4gdeisgn2.ui.components.Utility.isPaddingSet
 
 class OutlineButton @JvmOverloads constructor(
     context: Context,

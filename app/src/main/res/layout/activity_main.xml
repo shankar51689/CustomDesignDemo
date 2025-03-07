@@ -8,12 +8,12 @@
         android:layout_height="match_parent">
 
         <!-- Main Content -->
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- App Bar with Toolbar -->
+            &lt;!&ndash; App Bar with Toolbar &ndash;&gt;
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -26,17 +26,15 @@
                     android:title="@string/my_app" />
             </com.google.android.material.appbar.AppBarLayout>
 
-            <!-- Content Layout -->
+            &lt;!&ndash; Content Layout &ndash;&gt;
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <com.example.ux4gdesign.components.CustomButton
-                    android:layout_width=""
-                    android:layout_height=""
 
-                <!--<LinearLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -55,7 +53,7 @@
                         android:hint="@string/enter_text" />
 
 
-                    <com.ms.compose.ux4gdeisgn2.ui.components.editTexts.CustomEditText
+                    <com.example.ux4gdesign2.components.editTexts.CustomEditText
                         android:id="@+id/customEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -78,7 +76,7 @@
                         android:orientation="horizontal">
 
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton
+                        <com.example.ux4gdesign2.components.buttons.FillButton
                             android:id="@+id/ftError"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -88,7 +86,7 @@
                             android:textAllCaps="false"
                             app:fb_background="@color/UX4G_primary" />
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton
+                        <com.example.ux4gdesign2.components.buttons.FillButton
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -99,7 +97,7 @@
                             app:drawableStart="@drawable/ic_plus"
                             app:fb_background="@color/UX4G_danger" />
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton
+                        <com.example.ux4gdesign2.components.buttons.FillButton
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -112,7 +110,7 @@
 
 
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.ShadowButton
+                        <com.example.ux4gdesign2.components.buttons.ShadowButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/click_me"
@@ -133,7 +131,7 @@
 
                     </LinearLayout>
 
-                    <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton2
+                    <com.example.ux4gdesign2.components.buttons.FillButton2
                         android:id="@+id/ftDefault"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -151,7 +149,7 @@
                         android:orientation="horizontal">
 
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
+                        <com.example.ux4gdesign2.components.buttons.OutlineButton
 
                             android:id="@+id/ftSuccess"
                             android:layout_width="wrap_content"
@@ -160,7 +158,7 @@
                             app:buttonColor="@color/UX4G_primary"
                             android:text="@string/button"/>
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
+                        <com.example.ux4gdesign2.components.buttons.OutlineButton
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -170,7 +168,7 @@
                             app:cob_textPadding="10dp"
                             android:text="@string/button"/>
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
+                        <com.example.ux4gdesign2.components.buttons.OutlineButton
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,7 +190,7 @@
                         android:orientation="horizontal"
                         android:paddingHorizontal="10dp">
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton2
+                        <com.example.ux4gdesign2.components.buttons.FillButton2
                             android:id="@+id/start_Progress"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -213,7 +211,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"/>
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
+                        <com.example.ux4gdesign2.components.buttons.OutlineButton
                             android:id="@+id/btn2View"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -247,7 +245,7 @@
                         android:orientation="vertical">
 
 
-                        <com.ms.compose.ux4gdeisgn2.ui.components.progressbarcomponents.LinearProgressBar
+                        <com.example.ux4gdesign2.components.progressbarcomponents.LinearProgressBar
                             android:id="@+id/lpView"
                             android:layout_width="match_parent"
                             android:layout_height="4dp"
@@ -263,7 +261,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.progressbarcomponents.CircularProgressBar
+                            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar
                                 android:id="@+id/cpView"
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
@@ -274,7 +272,7 @@
                                 app:circularStrokeWidth="6dp"
                                 app:maxCircularProgress="100" />
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.Loaders.CircularLoader
+                            <com.example.ux4gdesign2.components.Loaders.CircularLoader
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_margin="10dp"
@@ -299,7 +297,7 @@
                                 android:orientation="vertical">
 
 
-                                <com.ms.compose.ux4gdeisgn2.ui.components.switchButtons.CustomSwitchButton
+                                <com.example.ux4gdesign2.components.switchButtons.CustomSwitchButton
                                     android:id="@+id/mySwitchBtn"
                                     android:layout_width="40dp"
                                     android:layout_height="20dp"
@@ -307,7 +305,7 @@
                                     android:checked="false" />
 
 
-                                <com.ms.compose.ux4gdeisgn2.ui.components.checkbox.CustomCheckBoxWithLabel
+                                <com.example.ux4gdesign2.components.checkbox.CustomCheckBoxWithLabel
                                     android:layout_width="20dp"
                                     android:layout_height="20dp"
                                     android:checked="true"
@@ -332,7 +330,7 @@
                                 android:visibility="gone" />
 
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.CircularImageView
+                            <com.example.ux4gdesign2.components.CircularImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_margin="10dp"
@@ -342,7 +340,7 @@
                                 app:imageCornerRadius="16dp"
                                 app:isCircle="false" />
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.CircularImageView
+                            <com.example.ux4gdesign2.components.CircularImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_margin="10dp"
@@ -359,7 +357,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.chips.CustomChipView
+                            <com.example.ux4gdesign2.components.chips.CustomChipView
                                 android:id="@+id/chip_group"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -405,7 +403,7 @@
                                 android:src="@drawable/test_image" />
 
 
-                            <com.ms.compose.ux4gdeisgn2.ui.components.CircularImageView
+                            <com.example.ux4gdesign2.components.CircularImageView
                                 android:layout_width="200dp"
                                 android:layout_height="200dp"
                                 android:scaleType="centerCrop"
@@ -495,17 +493,17 @@
 
 
 
-                </LinearLayout>-->
+                </LinearLayout>
 
             </ScrollView>
 
-            <!-- Bottom Navigation View -->
+            &lt;!&ndash; Bottom Navigation View &ndash;&gt;
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 app:menu="@menu/bottom_nav_menu" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <!-- Navigation Drawer -->
         <com.google.android.material.navigation.NavigationView

@@ -1,4 +1,4 @@
-package com.ms.compose.ux4gdeisgn2.ui.components
+package com.example.ux4gdesign2.components
 
 // DialogUtils.kt
 
@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import com.ms.compose.ux4gdeisgn2.R
+import com.example.ux4gdesign2.R
 
 object DialogUtils {
 
