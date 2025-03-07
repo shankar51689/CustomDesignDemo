@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id ("maven-publish")
-    id("kotlin-kapt")
+//    id("kotlin-kapt")
 
 }
 
@@ -24,12 +24,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-        }
-    }
-
-    sourceSets {
-        getByName("main") {
-            res.srcDirs("src/main/res")
         }
     }
 

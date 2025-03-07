@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="UX4GTheme.RoundImageView" parent="Widget.AppCompat.ImageButton">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@drawable/bg_round_image</item>
+        <item name="android:clipToOutline">true</item>
+        <item name="android:outlineProvider">background</item>
+    </style>
+</resources>

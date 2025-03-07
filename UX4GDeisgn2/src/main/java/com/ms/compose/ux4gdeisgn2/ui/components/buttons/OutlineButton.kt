@@ -11,7 +11,6 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.Gravity
 import androidx.core.graphics.ColorUtils
-import androidx.core.widget.TextViewCompat
 import com.google.android.material.button.MaterialButton
 import com.ms.compose.ux4gdeisgn2.R
 import com.ms.compose.ux4gdeisgn2.ui.components.Utility.dpToPx

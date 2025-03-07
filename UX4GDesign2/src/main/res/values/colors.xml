@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_light">#E6D6FB</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="gray">#6D6666</color>
+    <color name="shadowColor">#928C8C</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grayFill">#D7D0D0</color>
+    <color name="lightGray">#EDE9E9</color>
+    <color name="silverLight">#EFF1F2FF</color>
+    <color name="lightGray2">#B6B1B1</color>
+
+    <color name="rippleEffectColor">#6A6B6969</color>
+    <color name="rippleEffectColorLight">#3B6B6969</color>
+
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#EB8701</color>
+    <color name="colorOnPrimary">#FAEDED</color>
+    <color name="colorPrimaryVariant">#784302</color>
+
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSecondaryVariant">#01B3A1</color>
+
+    <!-- Background & Surface -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorSurface">#F5F5F5</color>
+    <color name="colorCardBackground">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+
+    <!-- Error -->
+    <color name="colorError">#B00020</color>
+
+<!--    Success / on-->
+    <color name="colorSuccess">#19AB0E</color>
+
+
+<!--         Primary Colors          -->
+
+    <color name="UX4G_primary">#613AF5</color>
+    <color name="UX4G_primary_900">#392095</color>
+    <color name="UX4G_primary_800">#4A2BC2</color>
+    <color name="UX4G_primary_700">#5F39E9</color>
+    <color name="UX4G_primary_600">#9161FF</color>
+    <color name="UX4G_primary_500">#9161FF</color>
+    <color name="UX4G_primary_400">#AC7AFF</color>
+    <color name="UX4G_primary_300">#C495FF</color>
+    <color name="UX4G_primary_200">#DAB2FF</color>
+    <color name="UX4G_primary_100">#ECD0FF</color>
+    <color name="UX4G_primary_50">#FAEFFF</color>
+
+    <color name="UX4G_secondary">#938BB6</color>
+    <color name="UX4G_secondary_900">#3A364F</color>
+    <color name="UX4G_secondary_800">#4D4768</color>
+    <color name="UX4G_secondary_700">#60597F</color>
+    <color name="UX4G_secondary_600">#746D96</color>
+    <color name="UX4G_secondary_500">#8981AB</color>
+    <color name="UX4G_secondary_400">#9E96BE</color>
+    <color name="UX4G_secondary_300">#B3ACCF</color>
+    <color name="UX4G_secondary_200">#C9C3DE</color>
+    <color name="UX4G_secondary_100">#DEDBEC</color>
+    <color name="UX4G_secondary_50">#F4F3F9</color>
+
+    <color name="UX4G_success">#3C9718</color>
+    <color name="UX4G_success_900">#044400</color>
+    <color name="UX4G_success_800">#024900</color>
+    <color name="UX4G_success_700">#005A00</color>
+    <color name="UX4G_success_600">#107400</color>
+    <color name="UX4G_success_500">#389314</color>
+    <color name="UX4G_success_400">#69B349</color>
+    <color name="UX4G_success_300">#9BCF80</color>
+    <color name="UX4G_success_200">#C6E5B5</color>
+    <color name="UX4G_success_100">#E3F2D9</color>
+    <color name="UX4G_success_50">#EDF7E6</color>
+
+    <color name="UX4G_danger">#B7131A</color>
+    <color name="UX4G_danger_900">#741010</color>
+    <color name="UX4G_danger_800">#961416</color>
+    <color name="UX4G_danger_700">#B72120</color>
+    <color name="UX4G_danger_600">#D4362E</color>
+    <color name="UX4G_danger_500">#EC5042</color>
+    <color name="UX4G_danger_400">#EC5042</color>
+    <color name="UX4G_danger_300">#FF8B78</color>
+    <color name="UX4G_danger_200">#FFAC9A</color>
+    <color name="UX4G_danger_100">#FFCDC0</color>
+    <color name="UX4G_danger_50">#FFEEEA</color>
+
+    <color name="UX4G_warning">#B77224</color>
+    <color name="UX4G_warning_900">#573000</color>
+    <color name="UX4G_warning_800">#713F00</color>
+    <color name="UX4G_warning_700">#8B5000</color>
+    <color name="UX4G_warning_600">#A46212</color>
+    <color name="UX4G_warning_500">#BB772B</color>
+    <color name="UX4G_warning_400">#D08D47</color>
+    <color name="UX4G_warning_300">#E2A468</color>
+    <color name="UX4G_warning_200">#F0BD8F</color>
+    <color name="UX4G_warning_100">#F9D7B9</color>
+    <color name="UX4G_warning_50">#FEF1E7</color>
+
+    <color name="UX4G_neutral">#212121</color>
+    <color name="UX4G_neutral_900">#393939</color>
+    <color name="UX4G_neutral_800">#4B4B4B</color>
+    <color name="UX4G_neutral_700">#5E5E5E</color>
+    <color name="UX4G_neutral_600">#727272</color>
+    <color name="UX4G_neutral_500">#868686</color>
+    <color name="UX4G_neutral_400">#9B9B9B</color>
+    <color name="UX4G_neutral_300">#B0B0B0</color>
+    <color name="UX4G_neutral_200">#C6C6C6</color>
+    <color name="UX4G_neutral_100">#DDDDDD</color>
+    <color name="UX4G_neutral_50">#F3F3F3</color>
+
+</resources>

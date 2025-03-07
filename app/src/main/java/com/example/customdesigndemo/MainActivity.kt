@@ -17,11 +17,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import com.example.customdesigndemo.databinding.ActivityMainBinding
+//import com.example.ux4gdesign2.components.DialogUtils
 import com.google.android.material.chip.ChipGroup
-import com.ms.compose.ux4gdeisgn2.ui.components.DialogUtils
-import com.ms.compose.ux4gdeisgn2.ui.components.chips.CustomChipView
-import com.ms.compose.ux4gdeisgn2.ui.components.editTexts.CustomEditText
-import com.ms.compose.ux4gdeisgn2.ui.components.editTexts.DrawableClickListener
+//import com.ms.compose.ux4gdeisgn2.ui.components.DialogUtils
+//import com.ms.compose.ux4gdeisgn2.ui.components.chips.CustomChipView
+//import com.ms.compose.ux4gdeisgn2.ui.components.editTexts.CustomEditText
+//import com.ms.compose.ux4gdeisgn2.ui.components.editTexts.DrawableClickListener
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -39,25 +40,46 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.mySwitchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
+       /* binding.mySwitchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
             Log.i("TaG","====================>${isChecked}")
-        }
+        }*/
 
         // Enable the drawer toggle icon
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(android.R.drawable.ic_menu_sort_by_size)
 
-        setClickListener()
+
+
+        /*DialogUtils.showCustomDialog(
+            this,
+            binding.btn2View,
+            "Custom Dialog Title ",
+            "This is a custom dialog message.",
+            icon = AppCompatResources.getDrawable(this, R.drawable.ic_launcher_background),
+            positiveButtonText = "OK",
+            negativeButtonText = "Cancel",
+            positiveAction = {
+                // Handle positive button action
+                Toast.makeText(this, "Action confirmed", Toast.LENGTH_SHORT).show()
+            },
+            negativeAction = {
+                // Handle negative button action
+                Toast.makeText(this, "Action canceled", Toast.LENGTH_SHORT).show()
+            }
+        )*/
+
+
+        //setClickListener()
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    /*@SuppressLint("ClickableViewAccessibility")
     private fun setClickListener() {
 
-        /*val chipContainer: ChipGroup = findViewById(R.id.chip_group)
+        *//*val chipContainer: ChipGroup = findViewById(R.id.chip_group)
         val chip = CustomChipView(this)
         chip.setChipText("Dynamic Chip")
         chip.setChipIcon(com.ms.compose.ux4gdeisgn2.R.drawable.ic_plus)
-        chipContainer.addView(chip)*/
+        chipContainer.addView(chip)*//*
 
         val customEditText = findViewById<CustomEditText>(R.id.customEditText)
 
@@ -96,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btn3View.setOnClickListener {
-            /*DialogUtils.showMaterialDialog(
+            *//*DialogUtils.showMaterialDialog(
                 this,
                 "Confirm Action",
                 "Are you sure you want to delete this item?",
@@ -110,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                     // Handle negative button action
                     Toast.makeText(this, "Action canceled", Toast.LENGTH_SHORT).show()
                 }
-            )*/
+            )*//*
 
         }
 
@@ -159,7 +181,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
