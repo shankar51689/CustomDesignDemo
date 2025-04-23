@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="25dp"
+        android:paddingHorizontal="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".ui.activitys.ListsCardsActivity">
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showSwitch="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showCheckBox="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/clc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showArrow="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showRadioBtn="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showRadioBtn="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showArrow="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showCheckBox="true" />
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showSwitch="true" />
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:iconSrc="@drawable/ic_menu_home"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray" />
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showSwitch="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showRadioBtn="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showArrow="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showCheckBox="true"/>
+
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:setComponentsOnLeft="true"
+                app:showSwitch="true"
+                app:showArrow="true"/>
+
+            <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:titleText="My Custom Title"
+                app:supportingText="My Supporting Text"
+                app:titleColor="@android:color/holo_blue_dark"
+                app:supportingTextColor="@android:color/darker_gray"
+                app:showCheckBox="true"/>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+</layout>

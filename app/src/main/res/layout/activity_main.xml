@@ -8,25 +8,13 @@
         android:layout_height="match_parent">
 
         <!-- Main Content -->
-        <!--<LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            &lt;!&ndash; App Bar with Toolbar &ndash;&gt;
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/purple_500"
-                    android:title="@string/my_app" />
-            </com.google.android.material.appbar.AppBarLayout>
-
-            &lt;!&ndash; Content Layout &ndash;&gt;
+            <!-- Content Layout -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -34,485 +22,95 @@
 
 
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
-
-                    &lt;!&ndash; EditText height should be 48dp &ndash;&gt;
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/testEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        style="@style/UX4GTheme.CustomEditText"
-                        android:visibility="visible"
-                        android:layout_marginBottom="10dp"
-                        android:hint="@string/enter_text" />
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp">
 
 
-                    <com.example.ux4gdesign2.components.editTexts.CustomEditText
-                        android:id="@+id/customEditText"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:hintText="Placeholder"
-                        app:hintTextSize="13sp"
-                        app:cet_border_width="1.8dp"
-                        app:cet_cornerRadius="8dp"
-                        app:cet_labelText="Label"
-                        app:cet_labelTextSize="12sp"
-                        app:cet_drawableStart="@drawable/ic_starts4"
-                        app:cet_drawableEnd="@drawable/ic_close"/>
+                        android:text="Button Views"/>
 
-                    &lt;!&ndash; Button &ndash;&gt;
-
-
-                    <LinearLayout
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/circularImageView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:orientation="horizontal">
+                        android:text="Circular image views"/>
 
-
-                        <com.example.ux4gdesign2.components.buttons.FillButton
-                            android:id="@+id/ftError"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="2dp"
-                            android:text="@string/button"
-                            android:textColor="@color/white"
-                            android:textAllCaps="false"
-                            app:fb_background="@color/UX4G_primary" />
-
-                        <com.example.ux4gdesign2.components.buttons.FillButton
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="2dp"
-                            android:text="@string/button"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            app:drawableStart="@drawable/ic_plus"
-                            app:fb_background="@color/UX4G_danger" />
-
-                        <com.example.ux4gdesign2.components.buttons.FillButton
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="2dp"
-                            android:text="@string/button"
-                            android:textAllCaps="false"
-                            app:drawableEnd="@drawable/ic_down"
-                            android:textColor="@color/white"
-                            app:fb_background="@color/UX4G_success" />
-
-
-
-                        <com.example.ux4gdesign2.components.buttons.ShadowButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/click_me"
-                            android:textColor="@color/design_default_color_error"
-                            android:textSize="16sp"
-                            android:visibility="gone"
-                            app:shadowBtnCornerRadius="30dp"
-                            app:shadowElevation="5dp"
-                            app:shadowRippleColor="@android:color/darker_gray" />
-
-
-                        &lt;!&ndash;<androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/spinner"
-                            android:layout_width="30dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/dots"
-                            />&ndash;&gt;
-
-                    </LinearLayout>
-
-                    <com.example.ux4gdesign2.components.buttons.FillButton2
-                        android:id="@+id/ftDefault"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="2dp"
-                        android:text="@string/button"
-                        android:textAllCaps="false"
-                        app:cornerRadius="4dp"
-                        app:fb_background="@color/UX4G_warning" />
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/efView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal">
+                        android:text="Edit Field views"/>
 
-
-                        <com.example.ux4gdesign2.components.buttons.OutlineButton
-
-                            android:id="@+id/ftSuccess"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/UX4G_primary"
-                            android:text="@string/button"/>
-
-                        <com.example.ux4gdesign2.components.buttons.OutlineButton
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/UX4G_danger"
-                            app:cob_iconStart="@drawable/ic_plus"
-                            app:cob_textPadding="10dp"
-                            android:text="@string/button"/>
-
-                        <com.example.ux4gdesign2.components.buttons.OutlineButton
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            app:buttonColor="@color/UX4G_success"
-                            app:cob_iconEnd="@drawable/ic_down"
-                            android:text="@string/button"/>
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="visible"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="10dp">
-
-                        <com.example.ux4gdesign2.components.buttons.FillButton2
-                            android:id="@+id/start_Progress"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/start_progress"
-                            android:paddingVertical="15dp"
-                            android:paddingHorizontal="15dp"
-                            />
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/UX4GTheme.roundFillButton"
-                            android:visibility="gone"
-                            android:text="@string/start_progress" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"/>
-
-                        <com.example.ux4gdesign2.components.buttons.OutlineButton
-                            android:id="@+id/btn2View"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingVertical="15dp"
-                            android:paddingHorizontal="15dp"
-                            android:text="@string/show_alert_dialog"/>
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/UX4GTheme.outlineButton"
-                            android:text="@string/show_alert_dialog"
-                            android:visibility="gone"/>
-
-                        <Button
-                            android:id="@+id/btn3View"
-                            android:visibility="gone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/UX4GTheme.outlineRoundButton"
-                            android:text="@string/click_me" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    &lt;!&ndash; CardView &ndash;&gt;
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/loaderView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:text="Loader views"/>
 
-
-                        <com.example.ux4gdesign2.components.progressbarcomponents.LinearProgressBar
-                            android:id="@+id/lpView"
-                            android:layout_width="match_parent"
-                            android:layout_height="4dp"
-                            android:layout_marginTop="10dp"
-                            app:backgroundColor="@color/purple_light"
-                            app:linearProgress="60"
-                            app:maxProgress="100"
-                            app:progressColor="?attr/colorPrimary"
-                            app:progressHeight="10dp" />
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar
-                                android:id="@+id/cpView"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_marginTop="10dp"
-                                app:circularBackgroundColor="@color/purple_light"
-                                app:circularProgress="45"
-                                app:circularProgressColor="?attr/colorPrimary"
-                                app:circularStrokeWidth="6dp"
-                                app:maxCircularProgress="100" />
-
-                            <com.example.ux4gdesign2.components.Loaders.CircularLoader
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_margin="10dp"
-                                android:layout_marginTop="15dp"
-                                app:loaderColor="?attr/colorPrimary" />
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:padding="16dp"
-                            android:visibility="visible">
-
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-
-                                <com.example.ux4gdesign2.components.switchButtons.CustomSwitchButton
-                                    android:id="@+id/mySwitchBtn"
-                                    android:layout_width="40dp"
-                                    android:layout_height="20dp"
-                                    android:layout_margin="20dp"
-                                    android:checked="false" />
-
-
-                                <com.example.ux4gdesign2.components.checkbox.CustomCheckBoxWithLabel
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:checked="true"
-                                    android:visibility="gone"
-                                    app:checkedBackgroundColor="@color/colorSuccess"
-                                    app:labelText="Accept Terms"
-                                    app:labelTextColor="@color/black"
-                                    app:labelTextSize="18sp"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="3dp"
-                                    app:uncheckedBackgroundColor="@color/white" />
-
-
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                style="@style/UX4GTheme.RoundImageView"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="10dp"
-                                android:src="@drawable/test_image"
-                                android:visibility="gone" />
-
-
-                            <com.example.ux4gdesign2.components.CircularImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="10dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/test_image"
-                                app:borderWidth="1dp"
-                                app:imageCornerRadius="16dp"
-                                app:isCircle="false" />
-
-                            <com.example.ux4gdesign2.components.CircularImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_margin="10dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/test_image"
-                                app:borderWidth="1dp"
-                                app:imageCornerRadius="16dp"
-                                app:isCircle="true" />
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <com.example.ux4gdesign2.components.chips.CustomChipView
-                                android:id="@+id/chip_group"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:chipText="User Chip"
-                                app:chipBackgroundColor="@color/colorPrimary"
-                                app:chipTextColor="@android:color/white"
-                                app:chipSelectable="true"
-                                app:chipDeletable="true"/>
-
-
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.cardview.widget.CardView
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/progressView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="8dp"
-                        android:elevation="20dp"
-                        android:visibility="gone"
-                        style="@style/UX4GTheme.CustomCard"
-                        android:layout_marginTop="16dp">
+                        android:text="Progress views"/>
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="16dp"
-                            android:visibility="gone"
-                            android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/rangeSliderView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Range Sliders views"/>
 
-                            <TextView
-                                android:id="@+id/tv"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/this_is_a_cardview" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/switchBtnView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Switch Button views"/>
 
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                style="@style/UX4GTheme.RoundImageView"
-                                android:src="@drawable/test_image" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/listCardsView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="List's Cards"/>
 
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/expandedView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expended View"/>
 
-                            <com.example.ux4gdesign2.components.CircularImageView
-                                android:layout_width="200dp"
-                                android:layout_height="200dp"
-                                android:scaleType="centerCrop"
-                                app:borderWidth="2dp"
-                                android:src="@drawable/test_image"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/swiperView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Swiper (Image Slider) View"/>
 
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    </androidx.cardview.widget.CardView>
-
-                   <androidx.appcompat.widget.LinearLayoutCompat
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:orientation="vertical"
-                       android:visibility="gone">
-                       &lt;!&ndash; Switch, CheckBox, RadioButton &ndash;&gt;
-                       <androidx.appcompat.widget.SwitchCompat
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:text="@string/enable_feature" />
-
-                       &lt;!&ndash;                    style="@style/UX4GTheme.CustomToggleButton1"&ndash;&gt;
-
-                       <androidx.appcompat.widget.SwitchCompat
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:paddingHorizontal="10dp"
-                           style="@style/UX4GTheme.CustomToggleButton2"
-                           android:text="@string/enable_feature" />
-
-                       <androidx.appcompat.widget.SwitchCompat
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:paddingHorizontal="10dp"
-                           android:visibility="gone"
-                           style="@style/UX4GTheme.style.switch1"
-                           android:text="@string/enable_feature" />
-
-                       <androidx.appcompat.widget.AppCompatCheckBox
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:visibility="gone"
-                           style="@style/UX4GTheme.CustomCheckBox"
-                           android:text="@string/enable_feature" />
-
-                       <androidx.appcompat.widget.AppCompatRadioButton
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:visibility="gone"
-                           style="@style/UX4GTheme.CustomRadioButton"
-                           android:text="@string/enable_feature" />
-
-                       &lt;!&ndash; RecyclerView &ndash;&gt;
-                       &lt;!&ndash;<androidx.recyclerview.widget.RecyclerView
-                           android:id="@+id/recyclerView"
-                           android:layout_width="match_parent"
-                           android:layout_height="200dp"
-                           android:background="#f0f0f0" />&ndash;&gt;
-
-                       <com.google.android.material.chip.Chip
-                           android:id="@+id/chip1"
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           android:text="@string/text"/>
-
-                       <com.google.android.material.chip.Chip
-                           android:id="@+id/chip"
-                           android:layout_width="wrap_content"
-                           android:layout_height="48dp"
-                           style="@style/UX4GTheme.CustomChip"
-                           android:text="@string/text"/>
-
-                       <ToggleButton
-                           android:id="@+id/toggleButton1"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="@string/togglebutton" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/dropdownView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dropdown View"/>
 
 
-                       <ToggleButton
-                           android:id="@+id/toggleButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           style="@style/UX4GTheme.ToggleButton1"
-                           android:text="@string/togglebutton" />
-                   </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </ScrollView>
 
-            &lt;!&ndash; Bottom Navigation View &ndash;&gt;
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:menu="@menu/bottom_nav_menu" />
-        </LinearLayout>-->
+        </LinearLayout>
 
-        <!-- Navigation Drawer -->
-        <com.google.android.material.navigation.NavigationView
+<!--         Navigation Drawer -->
+        <!--<com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/drawer_menu" />
+            app:menu="@menu/drawer_menu" />-->
 
 
     </androidx.drawerlayout.widget.DrawerLayout>

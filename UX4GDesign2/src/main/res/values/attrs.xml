@@ -37,6 +37,7 @@
         <attr name="imageCornerRadius" format="dimension"/>
         <attr name="borderColor" format="color"/>
         <attr name="isCircle" format="boolean"/>
+        <attr name="isActive" format="boolean" />
     </declare-styleable>
 
     <!--<declare-styleable name="OutlineButton">
@@ -55,12 +56,31 @@
         <attr name="circularBackgroundColor" format="color"/>
     </declare-styleable>
 
+    <declare-styleable name="SemiCircularProgressBar">
+        <attr name="sc_labelText" format="string"/>
+        <attr name="sc_showLabel" format="boolean"/>
+        <attr name="sc_progressColor" format="color"/>
+        <attr name="sc_trackColor" format="color"/>
+    </declare-styleable>
+
     <declare-styleable name="LinearProgressBar">
         <attr name="linearProgress" format="float"/>
         <attr name="maxProgress" format="float"/>
         <attr name="progressHeight" format="dimension"/>
         <attr name="progressColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
+        <attr name="showPercentage" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="LinearProgressBar2">
+        <attr name="progress" format="float"/>
+        <attr name="maxProgress2" format="float"/>
+        <attr name="showPercentage2" format="boolean"/>
+        <attr name="progressTextSize" format="dimension" />
+        <attr name="backgroundBarColor" format="color" />
+        <attr name="progressBarColor" format="color" />
+        <attr name="showPercentageText" format="boolean" />
+        <attr name="showDownLabel" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="CircularLoader">
@@ -129,6 +149,8 @@
         <attr name="cet_drawableEnd" format="reference"/>
         <attr name="cet_drawableStart" format="reference"/>
 
+        <attr name="cet_inputType" format="integer"/>
+
     </declare-styleable>
 
     <declare-styleable name="CustomOutlineButton">
@@ -156,7 +178,7 @@
         <attr name="iconSize" format="dimension" />
         <attr name="fb_background" format="dimension" />
         <attr name="style" format="reference" />
-        <attr name="drawablePadding" format="reference" />
+        <attr name="drawablePadding" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="CustomChipView">
@@ -168,8 +190,64 @@
         <attr name="chipDeletable" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="CustomRangeSlider">
+        <attr name="thumbSize" format="dimension"/>
+        <attr name="thumbFillColor" format="color"/>
+        <attr name="rs_trackColor" format="color"/>
+        <attr name="rs_inActiveTrackColor" format="color"/>
+        <attr name="thumbBorderColor" format="color"/>
+        <attr name="labelColor" format="color"/>
+        <attr name="rs_labelTextSize" format="dimension"/>
+        <attr name="showLabels" format="boolean"/>
+        <attr name="labelSuffix" format="string"/>
+    </declare-styleable>
 
+    <declare-styleable name="CustomMultiLineEditText">
+        <attr name="mlet_labelText" format="string" />
+        <attr name="mlet_labelText_size" format="dimension" />
+        <attr name="mlet_textSize" format="dimension" />
+        <attr name="mlet_hintText" format="string" />
+        <attr name="mlet_borderColor" format="color" />
+        <attr name="mlet_strokeWidth" format="dimension" />
+    </declare-styleable>
 
+    <declare-styleable name="CustomListItem">
+        <attr name="titleText" format="string" />
+        <attr name="titleTextFontSize" format="dimension" />
+        <attr name="supportingText" format="string" />
+        <attr name="supportingTextFontSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="supportingTextColor" format="color" />
+        <attr name="cardBackgroundColor" format="color" />
+        <attr name="showCheckBox" format="boolean" />
+        <attr name="showArrow" format="boolean" />
+        <attr name="showSwitch" format="boolean" />
+        <attr name="showRadioBtn" format="boolean" />
+        <attr name="iconSrc" format="reference" />
+        <attr name="src" format="reference" />
+        <attr name="setComponentsOnLeft" format="boolean" />
+        <attr name="cardCornerRadius" format="dimension" />
+        <attr name="cardStrokeWidth" format="dimension" />
+        <attr name="cardStrokeColor" format="color" />
+
+        <attr name="dropdown_hintText" format="string" />
+        <attr name="dropdown_hintColor" format="color" />
+        <attr name="dropdown_textColor" format="color" />
+        <attr name="dropdown_textSize" format="dimension" />
+        <attr name="fontFamily" format="reference|string" />
+        <attr name="dropdownIcon" format="reference" />
+        <attr name="iconColor" format="color" />
+        <attr name="fieldBackground" format="reference" />
+        <attr name="popupBackground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DotIndicatorView">
+        <attr name="dotRadius" format="dimension" />
+        <attr name="selectedDotRadius" format="dimension" />
+        <attr name="dotSpacing" format="dimension" />
+        <attr name="selectedColor" format="color" />
+        <attr name="unselectedColor" format="color" />
+    </declare-styleable>
 
 
 </resources>

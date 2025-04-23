@@ -13,6 +13,47 @@
         android:theme="@style/Theme.AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activitys.DropdownComponentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.SwiperViewActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.activitys.ExpandedCardView"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.ListsCardsActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.activitys.ToggleButtonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.DialogsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.RangeSlidersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.CircularImageViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.SwitchButtonsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.LoaderViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.ProgressViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.ButtonViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activitys.EditFieldsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

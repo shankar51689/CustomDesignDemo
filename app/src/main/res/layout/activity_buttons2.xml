@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.activitys.ButtonViewsActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="20dp"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+
+            <com.example.ux4gdesign2.components.buttons.FillButton
+                android:id="@+id/ftError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:text="@string/button"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                app:fb_background="@color/UX4G_primary" />
+
+            <com.example.ux4gdesign2.components.buttons.FillButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:text="@string/button"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:drawableStart="@drawable/ic_plus"
+                app:fb_background="@color/UX4G_danger" />
+
+            <com.example.ux4gdesign2.components.buttons.FillButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:text="@string/button"
+                android:textAllCaps="false"
+                app:drawableEnd="@drawable/ic_down"
+                android:textColor="@color/white"
+                app:fb_background="@color/UX4G_success" />
+
+
+
+            <com.example.ux4gdesign2.components.buttons.ShadowButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/click_me"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:shadowBtnCornerRadius="30dp"
+                app:shadowElevation="5dp"
+                app:shadowRippleColor="@android:color/darker_gray" />
+
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/spinner"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/dots"
+                />-->
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/ftDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/button"
+                android:textAllCaps="false"
+                app:cornerRadius="4dp"
+                app:fb_background="@color/UX4G_warning" />
+
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/ftDefault2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/button"
+                android:textAllCaps="false"
+                app:cornerRadius="4dp"
+                app:fb_background="@color/UX4G_danger"
+                app:drawableStart="@drawable/ic_plus"/>
+
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/ftDefault3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/button"
+                android:textAllCaps="false"
+                app:cornerRadius="4dp"
+                app:fb_background="@color/UX4G_success"
+                app:drawableEnd="@drawable/ic_down"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <com.example.ux4gdesign2.components.buttons.OutlineButton
+
+                android:id="@+id/ftSuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonColor="@color/UX4G_primary"
+                android:text="@string/button"/>
+
+            <com.example.ux4gdesign2.components.buttons.OutlineButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                app:buttonColor="@color/UX4G_danger"
+                app:cob_iconStart="@drawable/ic_plus"
+                app:cob_textPadding="10dp"
+                android:text="@string/button"/>
+
+            <com.example.ux4gdesign2.components.buttons.OutlineButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonColor="@color/UX4G_success"
+                app:cob_iconEnd="@drawable/ic_down"
+                android:text="@string/button"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

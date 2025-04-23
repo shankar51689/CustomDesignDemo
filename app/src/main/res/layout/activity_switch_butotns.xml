@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        tools:context=".ui.activitys.SwitchButtonsActivity">
+
+        <com.example.ux4gdesign2.components.switchButtons.CustomSwitchButton
+            android:id="@+id/mySwitchBtn"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
+            android:checked="false" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingHorizontal="10dp"
+            style="@style/UX4GTheme.CustomToggleButton2"
+            android:text="@string/enable_feature" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

@@ -11,13 +11,27 @@
     </style>-->
 
     <style name="Theme.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-<!--         Primary brand color. -->
-<!--        <item name="colorPrimary">@color/UX4G_primary_400</item>-->
+        <!--         Primary brand color. -->
+        <item name="colorPrimary">@color/UX4G_primary_400</item>
         <item name="colorOnPrimary">@color/white</item>
-<!--         Secondary brand color. -->
-<!--        <item name="colorSecondary">@color/UX4G_secondary</item>-->
+        <!--         Secondary brand color. -->
+        <item name="colorSecondary">@color/UX4G_secondary</item>
         <item name="colorOnSecondary">@color/white</item>
 
 
     </style>
+
+    <style name="CustomSliderStyle" parent="Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/CustomSliderLabel</item>
+    </style>
+
+    <style name="CustomSliderLabel" parent="Widget.MaterialComponents.Tooltip">
+        <item name="backgroundTint">#FF5722</item> <!-- Change to your desired color -->
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
 </resources>

@@ -43,7 +43,7 @@
         android:orientation="horizontal">
 
 
-        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.OutlineButton
+        <com.example.ux4gdesign2.components.buttons.OutlineButton
             android:id="@+id/btn_negative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             android:layout_marginRight="20dp"
             android:paddingVertical="20dp"/>
 
-        <com.ms.compose.ux4gdeisgn2.ui.components.buttons.FillButton2
+        <com.example.ux4gdesign2.components.buttons.FillButton2
             android:id="@+id/btn_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
