@@ -11,13 +11,18 @@
 
     <style name="Theme.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-<!--        <item name="colorPrimary">@color/UX4G_primary_400</item>-->
+        <!--        <item name="colorPrimary">@color/UX4G_primary_400</item>-->
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-<!--        <item name="colorSecondary">@color/UX4G_secondary</item>-->
+        <!--        <item name="colorSecondary">@color/UX4G_secondary</item>-->
         <item name="colorOnSecondary">@color/white</item>
-<!--        <item name="backgroundColor">@color/UX4G_neutral_50</item>-->
-<!--        <item name="background">@color/UX4G_neutral_50</item>-->
-<!--        <item name="colorSurface">@color/UX4G_neutral_50</item>-->
+        <!--        <item name="backgroundColor">@color/UX4G_neutral_50</item>-->
+        <!--        <item name="background">@color/UX4G_neutral_50</item>-->
+        <!--        <item name="colorSurface">@color/UX4G_neutral_50</item>-->
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Label"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        style="@style/UX4GTheme.L1"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Placeholder"
+        android:gravity="top|start"
+        android:padding="12dp"
+        android:background="@drawable/edittext_default_stroke"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:maxLength="200"
+        android:minHeight="100dp"
+        android:textColorHint="#999999"
+        android:layout_weight="1"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/char_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/200"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:layout_gravity="start"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

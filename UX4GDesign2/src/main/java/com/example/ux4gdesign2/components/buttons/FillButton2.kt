@@ -55,8 +55,8 @@ class FillButton2 @JvmOverloads constructor(
                 val userTextColor = textColors ?: null
 
                 // ✅ Apply Text Appearance First
-                val textStyleRes = getResourceId(R.styleable.FillButton_style, R.style.UX4GTheme_L1)
-                TextViewCompat.setTextAppearance(this@FillButton2, textStyleRes)
+//                val textStyleRes = getResourceId(R.styleable.FillButton_style, R.style.UX4GTheme_L1)
+//                TextViewCompat.setTextAppearance(this@FillButton2, textStyleRes)
 
                 // ✅ Ensure User-Defined Text Color Takes Precedence
                 if (userTextColor != null) {
@@ -85,7 +85,7 @@ class FillButton2 @JvmOverloads constructor(
                 val rippleColor    = textColors.defaultColor.withAlpha(50)
                 val rippleDrawable = RippleDrawable(ColorStateList.valueOf(rippleColor), shapeDrawable, shapeDrawable)
 
-                background = rippleDrawable // 🚀 Now ripple effect works perfectly without extra argument!
+                background = rippleDrawable // Now ripple effect works perfectly without extra argument!
 
                 // ✅ Handle Drawable Start & End
                 val drawableStart = getDrawable(R.styleable.FillButton_drawableStart)?.mutate()

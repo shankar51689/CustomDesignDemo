@@ -30,7 +30,7 @@ class FillButton @JvmOverloads constructor(
         minHeight       = 0
         minimumHeight   = 0
 
-        // ✅ Default Text Size (Always 16sp if not explicitly set)
+        // Default Text Size (Always 16sp if not explicitly set)
         if (!isAttributeSet(attrs, android.R.attr.textSize)) {
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
         }
@@ -54,23 +54,23 @@ class FillButton @JvmOverloads constructor(
 
         context.theme.obtainStyledAttributes(attrs, R.styleable.FillButton, 0, 0).apply {
             try {
-                // ✅ Preserve User-Defined Text Color (If Already Set)
+                // Preserve User-Defined Text Color (If Already Set)
                 val userTextColor = textColors ?: null
 
-                // ✅ Apply Text Appearance First
+                // Apply Text Appearance First
                 val textStyleRes = getResourceId(R.styleable.FillButton_style, R.style.UX4GTheme_L1)
                 TextViewCompat.setTextAppearance(this@FillButton, textStyleRes)
 
-                // ✅ Ensure User-Defined Text Color Takes Precedence
+                // Ensure User-Defined Text Color Takes Precedence
                 if (userTextColor != null) {
                     setTextColor(userTextColor)
                 }
 
-                // ✅ Set padding between drawable and text
+                // Set padding between drawable and text
                 val drawablePadding = getDimensionPixelSize(R.styleable.FillButton_drawablePadding, 5.dpToPx(context))
                 setCompoundDrawablePadding(drawablePadding)
 
-                // ✅ Handle Corner Radius
+                // Handle Corner Radius
                 val cornerRadius = getDimension(R.styleable.FillButton_cornerRadius, resources.getDimension(R.dimen.ux4g_button_radius_8px))
                 val shapeModel   = ShapeAppearanceModel.Builder().run{
                                                                         setAllCornerSizes(cornerRadius)
@@ -80,17 +80,17 @@ class FillButton @JvmOverloads constructor(
 
                 val shapeDrawable = MaterialShapeDrawable(shapeModel)
 
-                // ✅ Set Background Color Automatically
+                // Set Background Color Automatically
                 val backgroundColor     = getColor(R.styleable.FillButton_fb_background, context.getThemeColor(R.attr.colorPrimary))
                 shapeDrawable.fillColor = ColorStateList.valueOf(backgroundColor)
 
-                // ✅ Get Ripple Color from Text Color (Automatically!)
+                // Get Ripple Color from Text Color (Automatically!)
                 val rippleColor    = textColors.defaultColor.withAlpha(50)
                 val rippleDrawable = RippleDrawable(ColorStateList.valueOf(rippleColor), shapeDrawable, shapeDrawable)
 
-                background = rippleDrawable // 🚀 Now ripple effect works perfectly without extra argument!
+                background = rippleDrawable // Now ripple effect works perfectly without extra argument!
 
-                // ✅ Handle Drawable Start & End
+                // Handle Drawable Start & End
                 val drawableStart = getDrawable(R.styleable.FillButton_drawableStart)?.mutate()
                 val drawableEnd   = getDrawable(R.styleable.FillButton_drawableEnd)?.mutate()
 
@@ -98,7 +98,7 @@ class FillButton @JvmOverloads constructor(
                 drawableStart?.let { setDrawableSize(it, iconSize) }
                 drawableEnd?.let { setDrawableSize(it, iconSize) }
 
-                // ✅ Apply Text Color to Icons
+                // Apply Text Color to Icons
                 val colorStateList = textColors
                 drawableStart?.setTintList(colorStateList)
                 drawableEnd?.setTintList(colorStateList)

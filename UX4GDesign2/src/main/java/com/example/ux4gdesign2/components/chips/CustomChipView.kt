@@ -1,71 +1,71 @@
 package com.example.ux4gdesign2.components.chips
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.ux4gdesign2.R
-import com.google.android.material.chip.Chip
+import android.graphics.drawable.Drawable
+import android.view.LayoutInflater
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 
 class CustomChipView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : Chip(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr) {
+
+    private val textView: TextView
+    private val leadingIconView: ImageView
+    private val trailingIconView: ImageView
+    private var isSelectedState = false
 
     init {
-        setupAttributes(attrs)
+        orientation = HORIZONTAL
+        setPadding(16, 8, 16, 8)
+        background = ContextCompat.getDrawable(context, R.drawable.chip_background)
+
+        LayoutInflater.from(context).inflate(R.layout.view_custom_chip, this, true)
+        textView = findViewById(R.id.chip_text)
+        leadingIconView = findViewById(R.id.chip_leading_icon)
+        trailingIconView = findViewById(R.id.chip_trailing_icon)
     }
 
-    private fun setupAttributes(attrs: AttributeSet?) {
-        attrs?.let {
-            val typedArray = context.obtainStyledAttributes(it, R.styleable.CustomChipView)
+    fun setLabel(text: String) {
+        textView.text = text
+    }
 
-            val text = typedArray.getString(R.styleable.CustomChipView_chipText) ?: "Label"
-            val iconResId = typedArray.getResourceId(R.styleable.CustomChipView_chipIcon, -1)
-            val backgroundColor = typedArray.getColor(
-                R.styleable.CustomChipView_chipBackgroundColor,
-                ContextCompat.getColor(context, R.color.purple_500)
-            )
-            val textColor = typedArray.getColor(
-                R.styleable.CustomChipView_chipTextColor,
-                ContextCompat.getColor(context, android.R.color.white)
-            )
-            val isSelectable = typedArray.getBoolean(R.styleable.CustomChipView_chipSelectable, false)
-            val isDeletable = typedArray.getBoolean(R.styleable.CustomChipView_chipDeletable, false)
-
-            typedArray.recycle()
-
-            // Set chip properties
-            text?.let { setText(it) }
-            setTextColor(textColor)
-            chipBackgroundColor = ColorStateList.valueOf(backgroundColor)
-
-
-            // Set icon if provided
-            if (iconResId != -1) {
-                setChipIcon(iconResId)
-            }
-
-            // Make chip selectable
-            isCheckable = isSelectable
-            isCheckedIconVisible = isSelectable
-
-            // Add delete button
-            if (isDeletable) {
-                isChipIconVisible = true
-                setOnCloseIconClickListener { visibility = View.GONE }
-            }
+    fun setLeadingIcon(icon: Drawable?) {
+        if (icon != null) {
+            leadingIconView.setImageDrawable(icon)
+            leadingIconView.visibility = View.VISIBLE
+        } else {
+            leadingIconView.visibility = View.GONE
         }
     }
 
-    fun setChipText(text: String) {
-        this.text = text
+    fun setTrailingIcon(icon: Drawable?, onClick: (() -> Unit)? = null) {
+        if (icon != null) {
+            trailingIconView.setImageDrawable(icon)
+            trailingIconView.visibility = View.VISIBLE
+            trailingIconView.setOnClickListener { onClick?.invoke() }
+        } else {
+            trailingIconView.visibility = View.GONE
+        }
     }
 
-    fun setChipIcon(iconResId: Int) {
-        this.chipIcon = ContextCompat.getDrawable(context, iconResId)
-        this.isChipIconVisible = true // Corrected method
+    fun setSelectedState(selected: Boolean) {
+        isSelectedState = selected
+        background = if (selected) {
+            ContextCompat.getDrawable(context, R.drawable.chip_selected_background)
+        } else {
+            ContextCompat.getDrawable(context, R.drawable.chip_background)
+        }
+    }
+
+    fun toggleSelection() {
+        setSelectedState(!isSelectedState)
     }
 }

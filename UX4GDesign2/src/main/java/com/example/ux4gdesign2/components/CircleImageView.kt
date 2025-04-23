@@ -4,7 +4,11 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import com.example.ux4gdesign2.R
+import kotlin.math.cos
+import kotlin.math.min
+import kotlin.math.sin
 
 class CircularImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -20,6 +24,12 @@ class CircularImageView @JvmOverloads constructor(
     private var bitmapShader: BitmapShader? = null
     private var bitmapRect = RectF()
     private var borderRect = RectF()
+    private var showGreenDot = false // Flag to control the visibility of the green dot
+    private val dotPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = ContextCompat.getColor(context, R.color.UX4G_success)
+        style = Paint.Style.FILL
+    }
+    private val dotRadius = 15f // Radius of the green dot
 
     init {
         borderPaint.style = Paint.Style.STROKE
@@ -33,6 +43,7 @@ class CircularImageView @JvmOverloads constructor(
             borderColor = typedArray.getColor(R.styleable.CircularImageView_borderColor, Color.GRAY)
             cornerRadius = typedArray.getDimension(R.styleable.CircularImageView_imageCornerRadius, 0f)
             isCircle = typedArray.getBoolean(R.styleable.CircularImageView_isCircle, true)
+            showGreenDot = typedArray.getBoolean(R.styleable.CircularImageView_isActive, false)
             typedArray.recycle()
         }
         borderPaint.color = borderColor
@@ -42,32 +53,56 @@ class CircularImageView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         bitmap ?: return
 
-        val size = Math.min(width, height).toFloat()
+        val availableWidth = width - paddingLeft - paddingRight
+        val availableHeight = height - paddingTop - paddingBottom
+        val size = min(availableWidth, availableHeight).toFloat()
         val radius = size / 2f
 
-        // Draw the image with the desired shape (circle or rounded rectangle)
+        val left = paddingLeft.toFloat()
+        val top = paddingTop.toFloat()
+        val right = left + size
+        val bottom = top + size
+
         bitmapShader?.let {
             paint.shader = it
             if (isCircle) {
-                // Draw circle
-                canvas.drawCircle(radius, radius, radius - borderWidth, paint)
+                val centerX = (left + right) / 2
+                val centerY = (top + bottom) / 2
+                canvas.drawCircle(centerX, centerY, radius - borderWidth, paint)
             } else {
-                // Draw rounded rectangle
-                canvas.drawRoundRect(0f, 0f, size, size, cornerRadius, cornerRadius, paint)
+                canvas.drawRoundRect(left, top, right, bottom, cornerRadius, cornerRadius, paint)
             }
         }
 
-        // Draw the border if borderWidth > 0
         if (borderWidth > 0) {
             if (isCircle) {
-                canvas.drawCircle(radius, radius, radius - (borderWidth / 2), borderPaint)
+                val centerX = (left + right) / 2
+                val centerY = (top + bottom) / 2
+                canvas.drawCircle(centerX, centerY, radius - (borderWidth / 2), borderPaint)
             } else {
-                // Ensure the border is drawn correctly for rounded rectangle
-                val borderRadius = cornerRadius
-                // Apply the border width properly on the rounded rectangle
-                borderRect.set(borderWidth, borderWidth, size - borderWidth, size - borderWidth)
-                canvas.drawRoundRect(borderRect, borderRadius, borderRadius, borderPaint)
+                borderRect.set(left + borderWidth, top + borderWidth, right - borderWidth, bottom - borderWidth)
+                canvas.drawRoundRect(borderRect, cornerRadius, cornerRadius, borderPaint)
             }
+        }
+
+        // Draw the green dot if the condition is met
+        if (showGreenDot) {
+            val dotX: Float
+            val dotY: Float
+
+            if (isCircle) {
+                val centerX = (left + right + 25) / 2
+                val centerY = (top + bottom + 25) / 2
+                val angle = 45f // Angle to position the dot at the bottom-right
+                val dotDistance = radius - borderWidth - dotRadius // Distance from center to dot
+                dotX = centerX + dotDistance * cos(Math.toRadians(angle.toDouble())).toFloat()
+                dotY = centerY + dotDistance * sin(Math.toRadians(angle.toDouble())).toFloat()
+            } else {
+                dotX = right - dotRadius * 2 - borderWidth + 18
+                dotY = bottom - dotRadius * 2 - borderWidth + 18
+            }
+
+            canvas.drawCircle(dotX, dotY, dotRadius, dotPaint)
         }
     }
 
@@ -88,7 +123,6 @@ class CircularImageView @JvmOverloads constructor(
             invalidate()
         }
     }
-
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -123,6 +157,11 @@ class CircularImageView @JvmOverloads constructor(
 
     fun setShape(isCircle: Boolean) {
         this.isCircle = isCircle
+        invalidate()
+    }
+
+    fun setShowGreenDot(show: Boolean) {
+        showGreenDot = show
         invalidate()
     }
 }

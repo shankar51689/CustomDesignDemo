@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.text.Editable
+import android.text.InputType
+import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
@@ -42,6 +44,7 @@ class CustomEditText @JvmOverloads constructor(
     private var borderWidth: Float      = 1f
     private var cetCornerRadius: Float  = 10f
 
+    private var inputTypeValue: Int = 0
     var drawableClickListener: DrawableClickListener? = null
 
 
@@ -71,15 +74,35 @@ class CustomEditText @JvmOverloads constructor(
 
                 // Label setup
                 label.text = getString(R.styleable.CustomEditText_cet_labelText)
-                label.setTextSize(TypedValue.COMPLEX_UNIT_PX, getDimension(R.styleable.CustomEditText_cet_labelTextSize, 14f))
-
+                label.setTextSize(TypedValue.COMPLEX_UNIT_PX, getDimension(R.styleable.CustomEditText_cet_labelTextSize, 28f))
                 label.setTextColor(getColor(R.styleable.CustomEditText_cet_labelTextColor, ContextCompat.getColor(context, android.R.color.black)))
 
-                // EditText setup
-                editText.hint = getString(R.styleable.CustomEditText_hintText)
-                editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, getDimension(R.styleable.CustomEditText_hintTextSize, 18f))
-                editText.setHintTextColor(getColor(R.styleable.CustomEditText_hintTextColor,
-                    ContextCompat.getColor(context, android.R.color.darker_gray)))
+                // EditText hint setup
+                editText.hint = getString(R.styleable.CustomEditText_hintText) ?: "Placeholder"
+                editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, getDimension(R.styleable.CustomEditText_hintTextSize, 35f))
+                editText.setHintTextColor(getColor(R.styleable.CustomEditText_hintTextColor, ContextCompat.getColor(context, android.R.color.darker_gray)))
+//
+                inputTypeValue = attrs?.getAttributeIntValue(
+                    "http://schemas.android.com/apk/res/android", "inputType", editText.inputType
+                ) ?: editText.inputType
+
+                if (inputTypeValue in listOf(
+
+                        (InputType.TYPE_TEXT_VARIATION_PASSWORD + InputType.TYPE_CLASS_TEXT),
+                        (InputType.TYPE_NUMBER_VARIATION_PASSWORD + InputType.TYPE_CLASS_NUMBER),
+                        (InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD + InputType.TYPE_CLASS_TEXT)
+                    )
+                ) {
+                    editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                    editText.setCompoundDrawablesWithIntrinsicBounds(
+                        editText.compoundDrawables[0],
+                        null,
+                        ContextCompat.getDrawable(context, R.drawable.ic_eye_close), // Eye closed icon
+                        null
+                    )
+                } else {
+                    editText.inputType = inputTypeValue
+                }
 
                 // State colors
                 errorColor      = getColor(R.styleable.CustomEditText_errorColor, errorColor)
@@ -87,7 +110,7 @@ class CustomEditText @JvmOverloads constructor(
                 successColor    = getColor(R.styleable.CustomEditText_successColor, successColor)
                 defaultColor    = getColor(R.styleable.CustomEditText_defaultColor, defaultColor)
 
-                borderWidth     = getDimension(R.styleable.CustomEditText_cet_border_width, 1f)
+                borderWidth     = getDimension(R.styleable.CustomEditText_cet_border_width, 2f)
                 borderColor     = getColor(R.styleable.CustomEditText_cet_border_color, defaultColor)
 
                 cetCornerRadius = getDimension(R.styleable.CustomEditText_cet_cornerRadius, 10f)
@@ -129,10 +152,38 @@ class CustomEditText @JvmOverloads constructor(
                 drawableEnd?.let {
                     val drawableWidth = it.bounds.width()
                     if (event.rawX >= (editText.right - drawableWidth - editText.paddingEnd)) {
-                        // Right drawable (drawableEnd) clicked
-                        drawableClickListener?.onDrawableEndClick()
-                        state = State.DEFAULT
-                        llContainer.visibility = View.GONE
+
+                        if (inputTypeValue in listOf(
+                                (InputType.TYPE_TEXT_VARIATION_PASSWORD + InputType.TYPE_CLASS_TEXT),
+                                (InputType.TYPE_NUMBER_VARIATION_PASSWORD + InputType.TYPE_CLASS_NUMBER),
+                                (InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD + InputType.TYPE_CLASS_TEXT)
+                            )) {
+                            if (editText.inputType == (InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+                                editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                                editText.setCompoundDrawablesWithIntrinsicBounds(
+                                    editText.compoundDrawables[0],
+                                    null,
+                                    ContextCompat.getDrawable(context, R.drawable.ic_eye_open), // Eye Open Icon
+                                    null
+                                )
+                            } else {
+                                editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                                editText.setCompoundDrawablesWithIntrinsicBounds(
+                                    editText.compoundDrawables[0],
+                                    null,
+                                    ContextCompat.getDrawable(context, R.drawable.ic_eye_close), // Eye Closed Icon
+                                    null
+                                )
+                            }
+                            // Keep cursor at the end after toggling visibility
+                            editText.setSelection(editText.text.length)
+                        } else {
+                            // Right drawable (drawableEnd) clicked
+                            drawableClickListener?.onDrawableEndClick()
+                            state = State.DEFAULT
+                            llContainer.visibility = View.GONE
+                        }
+
                         return@setOnTouchListener true
                     }
                 }
@@ -144,10 +195,40 @@ class CustomEditText @JvmOverloads constructor(
                         return@setOnTouchListener true
                     }
                 }
-                }
+            }
             false // Pass event to other listeners if not handled
         }
+
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+                val drawableEnd = if (!s.isNullOrEmpty() && editText.inputType in listOf(
+                        (InputType.TYPE_TEXT_VARIATION_PASSWORD + InputType.TYPE_CLASS_TEXT),
+                        (InputType.TYPE_NUMBER_VARIATION_PASSWORD + InputType.TYPE_CLASS_NUMBER),
+                        (InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD + InputType.TYPE_CLASS_TEXT)
+                    )
+                ) {
+                    ContextCompat.getDrawable(context, R.drawable.ic_eye_close) // Default: Eye closed
+                } else if (!s.isNullOrEmpty()) {
+                    ContextCompat.getDrawable(context, R.drawable.ic_close) // Clear text icon for non-password fields
+                } else {
+                    null
+                }
+
+                editText.setCompoundDrawablesWithIntrinsicBounds(
+                    editText.compoundDrawables[0], // Keep drawableStart
+                    null,
+                    drawableEnd,                   // Dynamic drawableEnd visibility
+                    null
+                )
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
     }
+
+
 
     private fun updateState() {
         when (state) {

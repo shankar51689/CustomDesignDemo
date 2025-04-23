@@ -139,5 +139,19 @@
     </style>
 
 
+    <declare-styleable name="CustomRangeView">
+        <!-- Minimum value of the slider -->
+        <attr name="valueFrom" format="float"/>
+
+        <!-- Maximum value of the slider -->
+        <attr name="valueTo" format="float"/>
+
+        <!-- Step size for increments -->
+        <attr name="stepSize" format="float"/>
+
+        <!-- Default selected value -->
+        <attr name="defaultValue" format="float"/>
+    </declare-styleable>
+
 
 </resources>

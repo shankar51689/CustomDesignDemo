@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        tools:context=".ui.activitys.EditFieldsActivity">
+
+        <!-- EditText height should be 48dp -->
+
+        <!--<com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/testEdit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            style="@style/UX4GTheme.CustomEditText"
+            android:visibility="visible"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/enter_text" />-->
+
+        <com.example.ux4gdesign2.components.editTexts.CustomEditText
+            android:id="@+id/customEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cet_labelText="Label"
+            app:cet_drawableStart="@drawable/ic_starts4"/>
+
+        <com.example.ux4gdesign2.components.editTexts.CustomMultiLineEditText
+            android:id="@+id/customMultiLineEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mlet_labelText="Label"/>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

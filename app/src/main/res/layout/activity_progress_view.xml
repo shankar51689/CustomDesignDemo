@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        tools:context=".ui.activitys.ProgressViewActivity">
+
+        <com.example.ux4gdesign2.components.buttons.FillButton2
+            android:id="@+id/start_Progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_progress"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="15dp"
+            />
+
+        <com.example.ux4gdesign2.components.progressbarcomponents.LinearProgressBar
+            android:id="@+id/lpView"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            app:backgroundColor="@color/purple_light"
+            app:linearProgress="60"
+            app:maxProgress="100"
+            app:progressColor="?attr/colorPrimary"
+            app:progressHeight="10dp" />
+
+        <com.example.ux4gdesign2.components.progressbarcomponents.LinearProgressBar2
+            android:id="@+id/customProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:progressTextSize="10sp"
+            app:showPercentageText="true"/>
+
+        <com.example.ux4gdesign2.components.progressbarcomponents.LinearProgressBar2
+            android:id="@+id/customProgress2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:progressTextSize="10sp"
+            app:showDownLabel="true"
+            app:showPercentageText="true"/>
+
+        <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar
+            android:id="@+id/cpView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            app:circularBackgroundColor="@color/purple_light"
+            app:circularProgress="45"
+            app:circularProgressColor="?attr/colorPrimary"
+            app:circularStrokeWidth="6dp"
+            app:maxCircularProgress="100" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+
+            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar2
+                android:id="@+id/cp2View"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="4dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar2
+                android:id="@+id/cp2View1"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="4dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar2
+                android:id="@+id/cp2View2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="4dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar2
+                android:id="@+id/cp2View3"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginHorizontal="4dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.CircularProgressBar2
+                android:id="@+id/cp2View4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginHorizontal="4dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+
+            <com.example.ux4gdesign2.components.progressbarcomponents.HalfCircularProgressBar
+                android:id="@+id/hp1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="5dp"/>
+
+            <com.example.ux4gdesign2.components.progressbarcomponents.HalfCircularProgressBar
+                android:id="@+id/hp2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="5dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.HalfCircularProgressBar
+                android:id="@+id/hp3"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="5dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.HalfCircularProgressBar
+                android:id="@+id/hp4"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="5dp"/>
+            <com.example.ux4gdesign2.components.progressbarcomponents.HalfCircularProgressBar
+                android:id="@+id/hp5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="5dp"/>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

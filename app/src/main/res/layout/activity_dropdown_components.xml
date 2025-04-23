@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        tools:context=".ui.activitys.DropdownComponentsActivity">
+
+        <com.example.ux4gdesign2.components.dropdownComponent.CustomDropdownView
+            android:id="@+id/customDropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.example.ux4gdesign2.components.dropdownComponent.MaterialStyledDropdown
+            android:id="@+id/customMaterialDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            app:dropdown_textColor="@color/white"
+            app:dropdown_hintText="Select an option"
+            />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
