@@ -7,8 +7,10 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
+import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewConfiguration
 import android.view.animation.ScaleAnimation
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
@@ -147,7 +149,7 @@ class FillButton2 @JvmOverloads constructor(
                 }
                 MotionEvent.ACTION_UP -> {
                     expandAnimation(v)
-                    performClick() // Manually trigger the click event
+                    //performClick() // Manually trigger the click event
                     false // Allow setOnClickListener to be called
                 }
                 MotionEvent.ACTION_CANCEL -> {
@@ -186,7 +188,9 @@ class FillButton2 @JvmOverloads constructor(
     }
 
     override fun performClick(): Boolean {
-        return super.performClick()
+        super.performClick()
+        // You can also trigger haptic feedback or log here if needed
+        return true
     }
 
 }

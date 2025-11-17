@@ -15,19 +15,8 @@
         android:gravity="center_vertical">
 
 
-
-        <com.example.ux4gdesign2.components.CircularImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:src="@drawable/test_image"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:layout_margin="15dp"
-            android:visibility="gone"
-            />
-
-
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleCircle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SM"
@@ -37,7 +26,17 @@
             android:textAlignment="center"
             android:background="@drawable/bg_circle_text"
             android:padding="10dp"
+            android:visibility="visible"
             android:layout_marginStart="8dp"/>
+
+        <com.example.ux4gdesign2.components.CircularImageView
+            android:id="@+id/civ"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/test_image"
+            android:padding="5dp"
+            android:visibility="gone"
+            />
 
 
         <!-- Text Content -->
@@ -80,11 +79,10 @@
         <!-- Arrow Icon -->
         <ImageView
             android:id="@+id/arrowIconRight"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_arrow_right"
-            android:visibility="gone"
-            android:layout_marginStart="8dp"/>
+            android:visibility="gone"/>
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/radioButtonRight"
@@ -95,10 +93,10 @@
         <!-- Toggle Switch -->
         <com.example.ux4gdesign2.components.switchButtons.CustomSwitchButton
             android:id="@+id/toggleSwitchRight"
-            android:layout_width="30dp"
-            android:layout_height="15dp"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
             android:checked="false"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginEnd="6dp"/>
 
     </LinearLayout>

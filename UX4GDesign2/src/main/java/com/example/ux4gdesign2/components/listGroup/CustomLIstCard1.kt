@@ -30,6 +30,7 @@ class CustomListCard1 @JvmOverloads constructor(
     private val container1 : LinearLayout
     private val container2 : LinearLayout
     private var setComponentsOnLeft = false
+    private var isRadioBtnChecked: Boolean = false
 
     init {
         LayoutInflater.from(context).inflate(R.layout.custom_card1_view, this, true)
@@ -92,6 +93,32 @@ class CustomListCard1 @JvmOverloads constructor(
     /** Getters for programmatic access **/
     fun setOnArrowClickListener(listener: OnClickListener) {
         return arrowIcon.setOnClickListener(listener)
+    }
+    fun setOnCheckBoxClickListener(listener: (Boolean) -> Unit) {
+
+        checkBox.setOnCheckedChangeListener { a, isChecked ->
+            listener(isChecked)
+        }
+    }
+
+    fun setOnRadioButtonCheckedListener(listener: (Boolean) -> Unit) {
+        radioBtn.setOnCheckedChangeListener { a, isChecked ->
+            listener(isChecked)
+        }
+    }
+
+    fun setOnRadioButtonClickListener(listener: (Boolean) -> Unit) {
+        radioBtn.setOnClickListener {
+            isRadioBtnChecked = !isRadioBtnChecked
+            radioBtn.isChecked = isRadioBtnChecked
+            listener(radioBtn.isChecked)
+        }
+    }
+
+    fun setOnSwitchToggleListener(listener: (Boolean) -> Unit) {
+        toggleSwitch.setOnCheckedChangeListener { _, isChecked ->
+            listener(isChecked)
+        }
     }
 
 

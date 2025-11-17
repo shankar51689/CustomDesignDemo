@@ -21,31 +21,33 @@
 
 
             <com.example.ux4gdesign2.components.buttons.FillButton
-                android:id="@+id/ftError"
+                android:id="@+id/bt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
-                android:text="@string/button"
+                android:text="Button1"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 app:fb_background="@color/UX4G_primary" />
 
             <com.example.ux4gdesign2.components.buttons.FillButton
 
+                android:id="@+id/bt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
-                android:text="@string/button"
+                android:text="Button2"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:drawableStart="@drawable/ic_plus"
                 app:fb_background="@color/UX4G_danger" />
 
             <com.example.ux4gdesign2.components.buttons.FillButton
+                android:id="@+id/bt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
-                android:text="@string/button"
+                android:text="Button3"
                 android:textAllCaps="false"
                 app:drawableEnd="@drawable/ic_down"
                 android:textColor="@color/white"
@@ -53,7 +55,7 @@
 
 
 
-            <com.example.ux4gdesign2.components.buttons.ShadowButton
+            <!--<com.example.ux4gdesign2.components.buttons.ShadowButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/click_me"
@@ -63,7 +65,7 @@
                 app:shadowBtnCornerRadius="30dp"
                 app:shadowElevation="5dp"
                 app:shadowRippleColor="@android:color/darker_gray" />
-
+-->
 
             <!--<androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/spinner"
@@ -80,77 +82,131 @@
             android:orientation="horizontal">
 
             <com.example.ux4gdesign2.components.buttons.FillButton2
-                android:id="@+id/ftDefault"
+                android:id="@+id/bt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
                 android:layout_marginVertical="10dp"
-                android:text="@string/button"
+                android:text="Button4"
                 android:textAllCaps="false"
                 app:cornerRadius="4dp"
                 app:fb_background="@color/UX4G_warning" />
 
             <com.example.ux4gdesign2.components.buttons.FillButton2
-                android:id="@+id/ftDefault2"
+                android:id="@+id/bt5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
                 android:layout_marginVertical="10dp"
-                android:text="@string/button"
+                android:text="Button5"
                 android:textAllCaps="false"
                 app:cornerRadius="4dp"
                 app:fb_background="@color/UX4G_danger"
                 app:drawableStart="@drawable/ic_plus"/>
 
             <com.example.ux4gdesign2.components.buttons.FillButton2
-                android:id="@+id/ftDefault3"
+                android:id="@+id/bt6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="2dp"
                 android:layout_marginVertical="10dp"
-                android:text="@string/button"
+                android:text="Button6"
                 android:textAllCaps="false"
                 app:cornerRadius="4dp"
                 app:fb_background="@color/UX4G_success"
                 app:drawableEnd="@drawable/ic_down"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
-
-            <com.example.ux4gdesign2.components.buttons.OutlineButton
-
-                android:id="@+id/ftSuccess"
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/bt7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:buttonColor="@color/UX4G_primary"
-                android:text="@string/button"/>
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="Button7"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp"
+                app:fb_background="@color/UX4G_warning" />
 
-            <com.example.ux4gdesign2.components.buttons.OutlineButton
-
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/bt8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                app:buttonColor="@color/UX4G_danger"
-                app:cob_iconStart="@drawable/ic_plus"
-                app:cob_textPadding="10dp"
-                android:text="@string/button"/>
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="Button8"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp"
+                android:paddingRight="18dp"
+                app:fb_background="@color/UX4G_danger"
+                app:drawableStart="@drawable/ic_plus"/>
 
-            <com.example.ux4gdesign2.components.buttons.OutlineButton
-
+            <com.example.ux4gdesign2.components.buttons.FillButton2
+                android:id="@+id/bt9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:buttonColor="@color/UX4G_success"
-                app:cob_iconEnd="@drawable/ic_down"
-                android:text="@string/button"/>
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="10dp"
+                android:text="Button9"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp"
+                android:paddingLeft="18dp"
+                app:fb_background="@color/UX4G_success"
+                app:drawableEnd="@drawable/ic_down"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.example.ux4gdesign2.components.buttons.FillButton3
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello Loader"
+            android:textColor="@color/white"
+            app:drawableEnd="@drawable/ic_plus"
+            app:fb_background="@color/UX4G_danger"/>
+
+
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:orientation="horizontal">-->
+
+
+<!--            <com.example.ux4gdesign2.components.buttons.OutlineButton-->
+
+<!--                android:id="@+id/bt7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:buttonColor="@color/UX4G_primary"-->
+<!--                android:text="Button7"/>-->
+
+<!--            <com.example.ux4gdesign2.components.buttons.OutlineButton-->
+
+<!--                android:id="@+id/bt8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="5dp"-->
+<!--                app:buttonColor="@color/UX4G_danger"-->
+<!--                app:cob_iconStart="@drawable/ic_plus"-->
+<!--                app:cob_textPadding="10dp"-->
+<!--                android:text="Button8"/>-->
+
+<!--            <com.example.ux4gdesign2.components.buttons.OutlineButton-->
+
+<!--                android:id="@+id/bt9"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:buttonColor="@color/UX4G_success"-->
+<!--                app:cob_iconEnd="@drawable/ic_down"-->
+<!--                android:text="Button9"/>-->
+
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

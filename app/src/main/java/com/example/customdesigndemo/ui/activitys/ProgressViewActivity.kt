@@ -27,6 +27,7 @@ class ProgressViewActivity : AppCompatActivity() {
                     binding.cpView.setProgress(i.toFloat())
                     binding.lpView.setLinearProgress(i.toFloat())
                     binding.customProgress.setProgress(i)
+                    binding.customProgress2.setProgress(i)
 
                     binding.cp2View.setProgress(i.toFloat())
                     binding.cp2View2.setProgress(i.toFloat())

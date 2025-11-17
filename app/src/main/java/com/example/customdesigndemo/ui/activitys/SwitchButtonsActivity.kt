@@ -2,6 +2,7 @@ package com.example.customdesigndemo.ui.activitys
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -18,6 +19,7 @@ class SwitchButtonsActivity : AppCompatActivity() {
 
         binding.mySwitchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
             Log.i("TaG","====================>${isChecked}")
+            Toast.makeText(this, "Switch is ${if (isChecked) "ON" else "OFF"}", Toast.LENGTH_SHORT).show()
         }
     }
 }

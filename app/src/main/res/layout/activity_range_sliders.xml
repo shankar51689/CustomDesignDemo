@@ -24,13 +24,14 @@
             app:valueTo="100"
             app:stepSize="1"
             app:defaultValue="50"
+            android:visibility="gone"
             style="@style/CustomSliderStyle"/>
 
 
         <com.example.ux4gdesign2.components.rangeBar.CustomRangeSlider
             android:id="@+id/rangeSilder2"
             android:layout_width="match_parent"
-            android:layout_height="85dp"
+            android:layout_height="70dp"
             app:thumbSize="8dp"
             app:thumbBorderColor="@color/purple_500"
             app:thumbFillColor="@color/white"
@@ -40,6 +41,11 @@
             app:labelSuffix="%"
             android:paddingHorizontal="20dp"
             />
+
+        <com.example.ux4gdesign2.components.rangeBar.SingleThumbSlider
+            android:id="@+id/singleThumbSlider"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

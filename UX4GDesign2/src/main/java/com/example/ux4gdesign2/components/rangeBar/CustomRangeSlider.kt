@@ -188,23 +188,35 @@ class CustomRangeSlider @JvmOverloads constructor(
         canvas.drawCircle(rightX, centerY, thumbSize, thumbBorderPaint)
 
         // Draw labels below the thumb circles
+        // Draw labels below the thumb circles
+        // Draw labels below or above the thumb circles depending on overlap
         if (showLabels) {
-            val leftLabelWidth = labelPaint.measureText("${leftThumbValue.toInt()}$labelSuffix")
-            val rightLabelWidth = labelPaint.measureText("${rightThumbValue.toInt()}$labelSuffix")
-            // Adjust y-position so labels are always below the slider and do not overlap
-            canvas.drawText(
-                "${leftThumbValue.toInt()}$labelSuffix",
-                leftX - leftLabelWidth / 2,
-                centerY + thumbSize + 60,
-                labelPaint
-            )
-            canvas.drawText(
-                "${rightThumbValue.toInt()}$labelSuffix",
-                rightX - rightLabelWidth / 2,
-                centerY + thumbSize + 60,
-                labelPaint
-            )
+            val leftLabel = "${leftThumbValue.toInt()}$labelSuffix"
+            val rightLabel = "${rightThumbValue.toInt()}$labelSuffix"
+
+            val leftLabelWidth = labelPaint.measureText(leftLabel)
+            val rightLabelWidth = labelPaint.measureText(rightLabel)
+
+            val leftLabelX = leftX - leftLabelWidth / 2
+            val rightLabelX = rightX - rightLabelWidth / 2
+
+            val labelBaseY = centerY + thumbSize + 60
+            val labelAboveY = centerY - thumbSize - 30 // draw above when overlapping
+
+            val overlapThreshold = (leftLabelWidth + rightLabelWidth) / 2
+            val isOverlapping = kotlin.math.abs(rightX - leftX) < overlapThreshold
+
+            // If overlapping, put one above and one below
+            if (isOverlapping) {
+                canvas.drawText(leftLabel, leftLabelX, labelBaseY, labelPaint)
+                canvas.drawText(rightLabel, rightLabelX, labelAboveY, labelPaint)
+            } else {
+                // Normal: both below
+                canvas.drawText(leftLabel, leftLabelX, labelBaseY, labelPaint)
+                canvas.drawText(rightLabel, rightLabelX, labelBaseY, labelPaint)
+            }
         }
+
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

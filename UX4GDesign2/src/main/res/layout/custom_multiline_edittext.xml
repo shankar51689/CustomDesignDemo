@@ -24,14 +24,21 @@
         android:hint="Placeholder"
         android:gravity="top|start"
         android:padding="12dp"
-        android:background="@drawable/edittext_default_stroke"
+        android:background="@color/white"
         android:inputType="textMultiLine"
         android:minLines="3"
         android:maxLength="200"
         android:minHeight="100dp"
-        android:textColorHint="#999999"
+        android:textColorHint="@color/UX4G_neutral_300"
         android:layout_weight="1"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:textColor="@color/UX4G_neutral"
+        android:paddingHorizontal="10dp"
+        tools:ignore="LabelFor"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:drawablePadding="8dp"/>
 
     <TextView
         android:id="@+id/char_count"

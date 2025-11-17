@@ -117,6 +117,8 @@
     </declare-styleable>
 
     <declare-styleable name="CustomEditText">
+
+        <attr name="cet_backgroundColor" format="color"/>
         <!-- Label attributes -->
         <attr name="cet_labelText" format="string"/>
         <attr name="cet_labelTextSize" format="dimension"/>
@@ -180,6 +182,10 @@
         <attr name="style" format="reference" />
         <attr name="drawablePadding" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="FillButton3">
+        <attr name="loaderSize" format="dimension" />
+        <attr name="loaderPadding" format="dimension" />
+    </declare-styleable>
 
     <declare-styleable name="CustomChipView">
         <attr name="chipText" format="string" />
@@ -202,6 +208,18 @@
         <attr name="labelSuffix" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="SingleThumbSlider">
+        <attr name="sts_thumbRadius" format="dimension"/>
+        <attr name="sts_thumbBorderWidth" format="dimension"/>
+        <attr name="sts_thumbBorderColor" format="color"/>
+        <attr name="sts_thumbFillColor" format="color"/>
+        <attr name="sts_activeTrackColor" format="color"/>
+        <attr name="sts_inactiveTrackColor" format="color"/>
+        <attr name="sts_trackHeight" format="dimension"/>
+        <attr name="sts_labelTextSize" format="dimension"/>
+        <attr name="sts_labelColor" format="color"/>
+    </declare-styleable>
+
     <declare-styleable name="CustomMultiLineEditText">
         <attr name="mlet_labelText" format="string" />
         <attr name="mlet_labelText_size" format="dimension" />
@@ -209,6 +227,7 @@
         <attr name="mlet_hintText" format="string" />
         <attr name="mlet_borderColor" format="color" />
         <attr name="mlet_strokeWidth" format="dimension" />
+        <attr name="mlet_backgroundColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="CustomListItem">
@@ -239,6 +258,15 @@
         <attr name="iconColor" format="color" />
         <attr name="fieldBackground" format="reference" />
         <attr name="popupBackground" format="reference" />
+
+        <attr name="showTitleCircle" format="boolean"/>
+        <attr name="showImageCircle" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AutoImageSlider">
+        <attr name="autoScrollInterval" format="integer" />
+        <attr name="dotActiveColor" format="color" />
+        <attr name="dotInactiveColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="DotIndicatorView">

@@ -26,6 +26,7 @@ class CustomListCard3 @JvmOverloads constructor(
     private val cv: CardView
     private val ivIcon: ImageView
     private val ivImage: ImageView
+    private var isRadioBtnChecked: Boolean = false
 
     init {
         LayoutInflater.from(context).inflate(R.layout.custom_card3_view, this, true)
@@ -86,6 +87,33 @@ class CustomListCard3 @JvmOverloads constructor(
     fun setOnArrowClickListener(listener: OnClickListener) {
         return arrowIcon.setOnClickListener(listener)
     }
+    fun setOnCheckBoxClickListener(listener: (Boolean) -> Unit) {
+
+        checkBox.setOnCheckedChangeListener { a, isChecked ->
+            listener(isChecked)
+        }
+    }
+
+    fun setOnRadioButtonCheckedListener(listener: (Boolean) -> Unit) {
+        radioBtn.setOnCheckedChangeListener { a, isChecked ->
+            listener(isChecked)
+        }
+    }
+
+    fun setOnRadioButtonClickListener(listener: (Boolean) -> Unit) {
+        radioBtn.setOnClickListener {
+            isRadioBtnChecked = !isRadioBtnChecked
+            radioBtn.isChecked = isRadioBtnChecked
+            listener(radioBtn.isChecked)
+        }
+    }
+
+    fun setOnSwitchToggleListener(listener: (Boolean) -> Unit) {
+        toggleSwitchRight.setOnCheckedChangeListener { _, isChecked ->
+            listener(isChecked)
+        }
+    }
+
 
     /** Setters for programmatic updates **/
     fun setTitleText(text: String) {

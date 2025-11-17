@@ -29,13 +29,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cet_labelText="Label"
+            android:inputType="text"
             app:cet_drawableStart="@drawable/ic_starts4"/>
+
+        <!--<com.example.ux4gdesign2.components.editTexts.CustomMultilineEditText2
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
 
         <com.example.ux4gdesign2.components.editTexts.CustomMultiLineEditText
             android:id="@+id/customMultiLineEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:mlet_labelText="Label"/>
+
+
+        <com.example.ux4gdesign2.components.editTexts.CustomEditText
+            android:id="@+id/customEditTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cet_labelText="Enter Password (password is hello)"
+            app:hintText="Password"
+            android:inputType="textPassword"
+            app:cet_drawableStart="@drawable/ic_starts4"/>
+
+
+
 
 
 

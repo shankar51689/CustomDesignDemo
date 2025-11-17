@@ -11,13 +11,13 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="10dp"
+        android:gravity="center"
         tools:context=".ui.activitys.SwitchButtonsActivity">
 
         <com.example.ux4gdesign2.components.switchButtons.CustomSwitchButton
             android:id="@+id/mySwitchBtn"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:layout_margin="20dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
             android:checked="false" />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -25,6 +25,7 @@
             android:layout_height="48dp"
             android:paddingHorizontal="10dp"
             style="@style/UX4GTheme.CustomToggleButton2"
+            android:visibility="gone"
             android:text="@string/enable_feature" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

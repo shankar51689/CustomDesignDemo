@@ -31,6 +31,8 @@ class CustomMultiLineEditText @JvmOverloads constructor(
     private var strokeColor: Int = Color.GRAY
     private var strokeWidth: Float = 2f
 
+    private var containerBgColor: Int = ContextCompat.getColor(context, R.color.white)
+
     private var errorColor: Int   = ContextCompat.getColor(context, R.color.UX4G_danger)
     private var warningColor: Int = ContextCompat.getColor(context, R.color.UX4G_warning)
     private var successColor: Int = ContextCompat.getColor(context, R.color.UX4G_success)
@@ -63,7 +65,6 @@ class CustomMultiLineEditText @JvmOverloads constructor(
             "http://schemas.android.com/apk/res/android", "layout_height"
         )
 
-        Log.i("TaG","=-=-=-=-=-=-=-=-=-=-=-=-=>$heightAttr")
         if (heightAttr == "-2") { // wrap-content
             container.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
 //            editText.height = ViewGroup.LayoutParams.WRAP_CONTENT
@@ -80,6 +81,7 @@ class CustomMultiLineEditText @JvmOverloads constructor(
             typedArray.recycle()
         }
 
+        containerBgColor = typedArray.getColor(R.styleable.CustomMultiLineEditText_mlet_backgroundColor, Color.WHITE)
         label.text          = typedArray.getString(R.styleable.CustomMultiLineEditText_mlet_labelText) ?: "Label"
         label.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimension(R.styleable.CustomMultiLineEditText_mlet_labelText_size, 28f))
 //            label.textSize      = typedArray.getDimension(R.styleable.CustomMultiLineEditText_mlet_labelText_size, 12f)
@@ -126,6 +128,7 @@ class CustomMultiLineEditText @JvmOverloads constructor(
 
     private fun updateStrokeColor(color: Int) {
         val background = GradientDrawable().apply {
+            setColor(containerBgColor)
             setStroke(strokeWidth.toInt(), color)
             cornerRadius = 12f
         }

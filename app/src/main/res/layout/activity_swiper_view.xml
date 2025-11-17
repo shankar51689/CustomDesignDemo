@@ -14,11 +14,14 @@
         android:orientation="vertical"
         tools:context=".ui.activitys.SwiperViewActivity">
 
-        <com.example.ux4gdesign2.components.swiperView.SwiperView
+        <com.example.ux4gdesign2.components.swiperView.AutoImageSlider
             android:id="@+id/swiper"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"/>
+            android:layout_height="250dp"
+            app:autoScrollInterval="4000"
+            app:dotActiveColor="@color/black"
+            app:dotInactiveColor="@color/gray"/>
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

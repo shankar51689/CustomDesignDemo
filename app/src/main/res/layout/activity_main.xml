@@ -21,80 +21,79 @@
                 android:layout_weight="1">
 
 
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginHorizontal="10dp">
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
 
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Button Views"/>
+                        android:text="Button Views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/circularImageView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Circular image views"/>
+                        android:text="Circular image views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/efView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Edit Field views"/>
+                        android:text="Edit Field views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/loaderView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Loader views"/>
+                        android:text="Loader views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/progressView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Progress views"/>
+                        android:text="Progress views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/rangeSliderView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Range Sliders views"/>
+                        android:text="Range Sliders views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/switchBtnView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Switch Button views"/>
+                        android:text="Switch Button views" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/listCardsView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="List's Cards"/>
+                        android:text="List's Cards" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/expandedView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Expended View"/>
+                        android:text="Expended View" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/swiperView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Swiper (Image Slider) View"/>
+                        android:text="Swiper (Image Slider) View" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/dropdownView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dropdown View"/>
+                        android:text="Dropdown View" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

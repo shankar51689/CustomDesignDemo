@@ -3,12 +3,15 @@ package com.example.ux4gdesign2.components
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import com.example.ux4gdesign2.R
 import kotlin.math.cos
+import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sin
+import androidx.core.content.withStyledAttributes
 
 class CircularImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -38,13 +41,13 @@ class CircularImageView @JvmOverloads constructor(
 
     private fun loadAttributes(context: Context, attrs: AttributeSet?) {
         attrs?.let {
-            val typedArray = context.obtainStyledAttributes(it, R.styleable.CircularImageView)
-            borderWidth = typedArray.getDimension(R.styleable.CircularImageView_borderWidth, 0f)
-            borderColor = typedArray.getColor(R.styleable.CircularImageView_borderColor, Color.GRAY)
-            cornerRadius = typedArray.getDimension(R.styleable.CircularImageView_imageCornerRadius, 0f)
-            isCircle = typedArray.getBoolean(R.styleable.CircularImageView_isCircle, true)
-            showGreenDot = typedArray.getBoolean(R.styleable.CircularImageView_isActive, false)
-            typedArray.recycle()
+            context.withStyledAttributes(it, R.styleable.CircularImageView) {
+                borderWidth = getDimension(R.styleable.CircularImageView_borderWidth, 0f)
+                borderColor = getColor(R.styleable.CircularImageView_borderColor, Color.GRAY)
+                cornerRadius = getDimension(R.styleable.CircularImageView_imageCornerRadius, 0f)
+                isCircle = getBoolean(R.styleable.CircularImageView_isCircle, true)
+                showGreenDot = getBoolean(R.styleable.CircularImageView_isActive, false)
+            }
         }
         borderPaint.color = borderColor
         borderPaint.strokeWidth = borderWidth
@@ -53,42 +56,46 @@ class CircularImageView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         bitmap ?: return
 
-        val availableWidth = width - paddingLeft - paddingRight
-        val availableHeight = height - paddingTop - paddingBottom
-        val size = min(availableWidth, availableHeight).toFloat()
-        val radius = size / 2f
-
-        val left = paddingLeft.toFloat()
-        val top = paddingTop.toFloat()
+        val viewWidth = width - paddingLeft - paddingRight
+        val viewHeight = height - paddingTop - paddingBottom
+        val size = min(viewWidth, viewHeight).toFloat()
+        val left = (width - size) / 2f
+        val top = (height - size) / 2f
         val right = left + size
         val bottom = top + size
+        val radius = size / 2f
+        val centerX = (left + right) / 2f
+        val centerY = (top + bottom) / 2f
 
         bitmapShader?.let {
             paint.shader = it
             if (isCircle) {
-                val centerX = (left + right) / 2
-                val centerY = (top + bottom) / 2
                 canvas.drawCircle(centerX, centerY, radius - borderWidth, paint)
             } else {
                 canvas.drawRoundRect(left, top, right, bottom, cornerRadius, cornerRadius, paint)
             }
         }
 
+        // Draw border
         if (borderWidth > 0) {
             if (isCircle) {
-                val centerX = (left + right) / 2
-                val centerY = (top + bottom) / 2
-                canvas.drawCircle(centerX, centerY, radius - (borderWidth / 2), borderPaint)
+                canvas.drawCircle(centerX, centerY, radius - borderWidth / 2f, borderPaint)
             } else {
-                borderRect.set(left + borderWidth, top + borderWidth, right - borderWidth, bottom - borderWidth)
+                borderRect.set(left + borderWidth / 2f, top + borderWidth / 2f,
+                    right - borderWidth / 2f, bottom - borderWidth / 2f)
                 canvas.drawRoundRect(borderRect, cornerRadius, cornerRadius, borderPaint)
             }
         }
 
         // Draw the green dot if the condition is met
         if (showGreenDot) {
-            val dotX: Float
-            val dotY: Float
+
+            // Overlap amount: How much dot should be placed outside the corner
+            val dotOverlap = dotRadius * 0.5f
+
+            // Adjust for border and corner radius
+            var dotX = right - borderWidth / 2f + dotOverlap
+            var dotY = bottom - borderWidth / 2f + dotOverlap
 
             if (isCircle) {
                 val centerX = (left + right + 25) / 2
@@ -109,20 +116,32 @@ class CircularImageView @JvmOverloads constructor(
     private fun updateShader() {
         bitmap = getBitmapFromDrawable()
         bitmap?.let {
-            bitmapShader = BitmapShader(it, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
-            val size = Math.min(width, height).toFloat()
+            val scale: Float
+            val bitmapWidth = it.width.toFloat()
+            val bitmapHeight = it.height.toFloat()
+
+            val viewWidth = width.toFloat()
+            val viewHeight = height.toFloat()
+
+            val matrix = Matrix()
 
             if (isCircle) {
-                val radius = size / 2f
-                borderRect.set(borderWidth, borderWidth, size - borderWidth, size - borderWidth)
+                val size = min(viewWidth, viewHeight)
+                scale = size / min(bitmapWidth, bitmapHeight)
             } else {
-                // Set border rect for rounded rectangle shape
-                borderRect.set(0f, 0f, size, size) // Same dimensions for the rectangle
+                scale = maxOf(viewWidth / bitmapWidth, viewHeight / bitmapHeight)
             }
+
+            matrix.setScale(scale, scale)
+
+            bitmapShader = BitmapShader(it, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+            bitmapShader?.setLocalMatrix(matrix)
+            paint.shader = bitmapShader
 
             invalidate()
         }
     }
+
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -155,10 +174,10 @@ class CircularImageView @JvmOverloads constructor(
         invalidate()
     }
 
-    fun setShape(isCircle: Boolean) {
+    /*fun setShape(isCircle: Boolean) {
         this.isCircle = isCircle
         invalidate()
-    }
+    }*/
 
     fun setShowGreenDot(show: Boolean) {
         showGreenDot = show

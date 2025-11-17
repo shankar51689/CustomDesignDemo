@@ -4,6 +4,7 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.*
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
 import android.util.AttributeSet
@@ -19,32 +20,31 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 
-class FillButton @JvmOverloads constructor(
+class FillButton3 @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = android.R.attr.buttonStyle
 ) : MaterialButton(context, attrs, defStyleAttr) {
 
-    // ---------------------------
-    // INTERNAL LOADER LOGIC
-    // ---------------------------
+    // -----------------------------------
+    // LOADER + ICON PRESERVATION
+    // -----------------------------------
     private var loaderDrawable: LoaderDrawable? = null
     private var isLoaderVisible = false
 
-    // Drawable spinner size (dp)
     private var loaderSizeDp = 20
 
-    // ---------------------------
+    private var originalStart: Drawable? = null
+    private var originalEnd: Drawable? = null
 
     init {
-        stateListAnimator = null // Remove click elevation effect
+        stateListAnimator = null
 
         insetTop = 0
         insetBottom = 0
         minHeight = 0
         minimumHeight = 0
 
-        // Default Text Size (Always 16sp if not explicitly set)
         if (!isAttributeSet(attrs, android.R.attr.textSize)) {
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
         }
@@ -52,13 +52,13 @@ class FillButton @JvmOverloads constructor(
         try {
             applyCustomStyle(attrs)
         } catch (e: Exception) {
-            Log.e("FillButton", "Error applying custom style ${e.message}")
+            Log.e("FillButton3", "Error applying custom style ${e.message}")
         }
     }
 
-    // ---------------------------
-    // BUILT-IN LOADER DRAWABLE
-    // ---------------------------
+    // -----------------------------------
+    //  LOADER DRAWABLE (BUILT-IN)
+    // -----------------------------------
     private inner class LoaderDrawable(var loaderColor: Int) : Drawable() {
 
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -93,7 +93,6 @@ class FillButton @JvmOverloads constructor(
             val cx = b.exactCenterX()
             val cy = b.exactCenterY()
 
-            // Gradient for loader
             val tailColor = ColorUtils.setAlphaComponent(loaderColor, (0.2f * 255).toInt())
 
             val gradient = SweepGradient(
@@ -116,9 +115,9 @@ class FillButton @JvmOverloads constructor(
         override fun getOpacity(): Int = PixelFormat.TRANSLUCENT
     }
 
-    // ---------------------------
-    // PUBLIC API FOR LOADER
-    // ---------------------------
+    // -----------------------------------
+    //  PUBLIC API: SHOW LOADER
+    // -----------------------------------
 
     fun showLoader(
         color: Int = textColors.defaultColor,
@@ -135,12 +134,14 @@ class FillButton @JvmOverloads constructor(
             setBounds(0, 0, sizePx, sizePx)
         }
 
-        setCompoundDrawablesRelative(
-            loaderDrawable,
-            null,
-            null,
-            null
-        )
+        // If user has drawableStart → combine loader + icon
+        if (originalStart != null) {
+            val combined = combineDrawables(loaderDrawable!!, originalStart!!)
+            setCompoundDrawablesRelative(combined, null, originalEnd, null)
+        } else {
+            // Normal case: only loader
+            setCompoundDrawablesRelative(loaderDrawable, null, originalEnd, null)
+        }
 
         compoundDrawablePadding = 8.dpToPx(context)
         isEnabled = false
@@ -150,11 +151,10 @@ class FillButton @JvmOverloads constructor(
         if (!isLoaderVisible) return
 
         isLoaderVisible = false
-
         loaderDrawable = null
 
-        // Remove drawable
-        setCompoundDrawablesRelative(null, null, null, null)
+        // Restore original icons
+        setCompoundDrawablesRelative(originalStart, null, originalEnd, null)
 
         isEnabled = true
     }
@@ -164,18 +164,40 @@ class FillButton @JvmOverloads constructor(
         loaderDrawable?.invalidateSelf()
     }
 
-    // ---------------------------
-    // ORIGINAL CODE (UNCHANGED)
-    // ---------------------------
+    // -----------------------------------
+    //  MERGE LOADER + ORIGINAL ICON
+    // -----------------------------------
+    private fun combineDrawables(loader: Drawable, icon: Drawable): Drawable {
 
+        val size = loader.intrinsicWidth + icon.intrinsicWidth + 12.dpToPx(context)
+        val height = maxOf(loader.intrinsicHeight, icon.intrinsicHeight)
+
+        val bitmap = Bitmap.createBitmap(size, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+
+        loader.setBounds(0, 0, loader.intrinsicWidth, loader.intrinsicHeight)
+        loader.draw(canvas)
+
+        val left = loader.intrinsicWidth + 12.dpToPx(context)
+
+        icon.setBounds(left, 0, left + icon.intrinsicWidth, icon.intrinsicHeight)
+        icon.draw(canvas)
+
+        return BitmapDrawable(resources, bitmap)
+    }
+
+    // -----------------------------------
+    // ORIGINAL STYLE LOGIC (UNCHANGED)
+    // -----------------------------------
     private fun applyCustomStyle(attrs: AttributeSet?) {
 
         context.theme.obtainStyledAttributes(attrs, R.styleable.FillButton, 0, 0).apply {
             try {
+
                 val userTextColor = textColors ?: null
 
                 val textStyleRes = getResourceId(R.styleable.FillButton_style, R.style.UX4GTheme_L1)
-                TextViewCompat.setTextAppearance(this@FillButton, textStyleRes)
+                TextViewCompat.setTextAppearance(this@FillButton3, textStyleRes)
 
                 if (userTextColor != null) setTextColor(userTextColor)
 
@@ -211,22 +233,23 @@ class FillButton @JvmOverloads constructor(
 
                 background = rippleDrawable
 
-                val drawableStart = getDrawable(R.styleable.FillButton_drawableStart)?.mutate()
-                val drawableEnd = getDrawable(R.styleable.FillButton_drawableEnd)?.mutate()
+                // SAVE original icons
+                originalStart = getDrawable(R.styleable.FillButton_drawableStart)?.mutate()
+                originalEnd = getDrawable(R.styleable.FillButton_drawableEnd)?.mutate()
 
                 val iconSize = getDimensionPixelSize(
                     R.styleable.FillButton_iconSize,
                     14.dpToPx(context)
                 )
 
-                drawableStart?.let { setDrawableSize(it, iconSize) }
-                drawableEnd?.let { setDrawableSize(it, iconSize) }
+                originalStart?.let { setDrawableSize(it, iconSize) }
+                originalEnd?.let { setDrawableSize(it, iconSize) }
 
                 val colorStateList = textColors
-                drawableStart?.setTintList(colorStateList)
-                drawableEnd?.setTintList(colorStateList)
+                originalStart?.setTintList(colorStateList)
+                originalEnd?.setTintList(colorStateList)
 
-                setCompoundDrawablesRelative(drawableStart, null, drawableEnd, null)
+                setCompoundDrawablesRelative(originalStart, null, originalEnd, null)
 
             } finally {
                 recycle()
@@ -235,8 +258,8 @@ class FillButton @JvmOverloads constructor(
     }
 
     private fun setDrawableSize(drawable: Drawable, size: Int) {
-        val wrappedDrawable = DrawableCompat.wrap(drawable)
-        wrappedDrawable.setBounds(0, 0, size, size)
+        val wrapped = DrawableCompat.wrap(drawable)
+        wrapped.setBounds(0, 0, size, size)
     }
 
     private fun isAttributeSet(attrs: AttributeSet?, attribute: Int): Boolean {

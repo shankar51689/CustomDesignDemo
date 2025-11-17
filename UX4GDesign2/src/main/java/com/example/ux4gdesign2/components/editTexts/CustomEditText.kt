@@ -11,7 +11,6 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
-import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -44,6 +43,8 @@ class CustomEditText @JvmOverloads constructor(
     private var borderWidth: Float      = 1f
     private var cetCornerRadius: Float  = 10f
 
+    private var containerBgColor : Int = ContextCompat.getColor(context, R.color.white)
+
     private var inputTypeValue: Int = 0
     var drawableClickListener: DrawableClickListener? = null
 
@@ -72,6 +73,7 @@ class CustomEditText @JvmOverloads constructor(
         ).apply {
             try {
 
+                containerBgColor = getColor((R.styleable.CustomEditText_cet_backgroundColor), ContextCompat.getColor(context, android.R.color.white))
                 // Label setup
                 label.text = getString(R.styleable.CustomEditText_cet_labelText)
                 label.setTextSize(TypedValue.COMPLEX_UNIT_PX, getDimension(R.styleable.CustomEditText_cet_labelTextSize, 28f))
@@ -181,7 +183,7 @@ class CustomEditText @JvmOverloads constructor(
                             // Right drawable (drawableEnd) clicked
                             drawableClickListener?.onDrawableEndClick()
                             state = State.DEFAULT
-                            llContainer.visibility = View.GONE
+                            llContainer.visibility = GONE
                         }
 
                         return@setOnTouchListener true
@@ -262,18 +264,27 @@ class CustomEditText @JvmOverloads constructor(
 
     fun setMessage(text: String) {
         message.text = text
-        llContainer.visibility = View.VISIBLE
+        llContainer.visibility = VISIBLE
     }
 
-    var text: Editable = editText.text
+    val text: Editable
+      get() = editText.text
+
+    fun setText(text: String) {
+        editText.setText(text)
+    }
+    fun clearText() {
+        editText.text.clear()
+    }
 
     enum class State {
         DEFAULT, ERROR, WARNING, SUCCESS
     }
 
+    @SuppressLint("ResourceType")
     private fun updateBorder() {
         val borderDrawable = GradientDrawable().apply {
-            setColor(ContextCompat.getColor(context, R.color.UX4G_neutral_50))
+            setColor(containerBgColor)
             setStroke(borderWidth.toInt(), borderColor)
             cornerRadius = cetCornerRadius
         }
@@ -285,7 +296,7 @@ class CustomEditText @JvmOverloads constructor(
         get() = editText
 
 
-    fun setTextWatcher(textWatcher: android.text.TextWatcher) {
+    fun setTextWatcher(textWatcher: TextWatcher) {
         return editText.addTextChangedListener(textWatcher)
     }
 

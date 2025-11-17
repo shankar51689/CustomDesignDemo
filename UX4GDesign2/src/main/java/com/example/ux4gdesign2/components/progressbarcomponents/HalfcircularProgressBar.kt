@@ -41,6 +41,8 @@ class HalfCircularProgressBar @JvmOverloads constructor(
         progressColor = typedArray.getColor(R.styleable.SemiCircularProgressBar_sc_progressColor, ContextCompat.getColor(context, R.color.UX4G_primary))
 
 
+
+
         typedArray.recycle()
         invalidate()
     }

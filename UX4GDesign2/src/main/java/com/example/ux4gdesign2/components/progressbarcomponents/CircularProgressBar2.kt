@@ -18,6 +18,7 @@ class CircularProgressBar2 @JvmOverloads constructor(
     private var trackColor      = Color.parseColor("#E0E0E0")
     private var labelText       = "Uploading"
     private var labelColor      = ContextCompat.getColor(context, R.color.UX4G_neutral_600)
+    private var showLabel       = true
 
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style       = Paint.Style.STROKE
@@ -32,6 +33,21 @@ class CircularProgressBar2 @JvmOverloads constructor(
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         textAlign = Paint.Align.CENTER
     }
+
+    init {
+        attrs?.let {
+            val typedArray = context.obtainStyledAttributes(it, R.styleable.SemiCircularProgressBar)
+
+            labelText = typedArray.getString(R.styleable.SemiCircularProgressBar_sc_labelText) ?: labelText
+            showLabel = typedArray.getBoolean(R.styleable.SemiCircularProgressBar_sc_showLabel, showLabel)
+            progressColor = typedArray.getColor(R.styleable.SemiCircularProgressBar_sc_progressColor, progressColor)
+            trackColor = typedArray.getColor(R.styleable.SemiCircularProgressBar_sc_trackColor, trackColor)
+
+            typedArray.recycle()
+        }
+    }
+
+
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -87,24 +103,26 @@ class CircularProgressBar2 @JvmOverloads constructor(
             canvas.drawText(progressText, centerX, (centerY + 9 ) + textSize / 3, textPaint)
         }
 
-        if (size < 118) { // 45dp
-            // Draw label outside (bottom)
-            // Adjust label placement based on size
-            textPaint.textSize = 13f
-            textPaint.color = labelColor
-            textPaint.typeface = Typeface.DEFAULT // Label remains normal weight
+        if(showLabel) {
+            if (size < 118) { // 45dp
+                // Draw label outside (bottom)
+                // Adjust label placement based on size
+                textPaint.textSize = 13f
+                textPaint.color = labelColor
+                textPaint.typeface = Typeface.DEFAULT // Label remains normal weight
 
-            // Ensure label stays within bounds by increasing view height
-            canvas.drawText(labelText, centerX, centerY + (height.toFloat() / 2.3f) , textPaint)
-            //of canvas.drawText(labelText, centerX, height.toFloat() + textSize, textPaint)
-        } else {
-            // Draw label centered inside
-            // Adjust label placement based on size
-            textPaint.textSize = textSize * 0.45f
-            textPaint.color = labelColor
-            textPaint.typeface = Typeface.DEFAULT // Label remains normal weight
+                // Ensure label stays within bounds by increasing view height
+                canvas.drawText(labelText, centerX, centerY + (height.toFloat() / 2.3f) , textPaint)
+                //of canvas.drawText(labelText, centerX, height.toFloat() + textSize, textPaint)
+            } else {
+                // Draw label centered inside
+                // Adjust label placement based on size
+                textPaint.textSize = textSize * 0.45f
+                textPaint.color = labelColor
+                textPaint.typeface = Typeface.DEFAULT // Label remains normal weight
 
-            canvas.drawText(labelText, centerX, (centerY + 8) - textSize / 1.5f, textPaint)
+                canvas.drawText(labelText, centerX, (centerY + 8) - textSize / 1.5f, textPaint)
+            }
         }
     }
 
@@ -141,6 +159,11 @@ class CircularProgressBar2 @JvmOverloads constructor(
 
     fun setLabelColor(color: Int) {
         labelColor = color
+        invalidate()
+    }
+
+    fun setShowLabel(show: Boolean) {
+        showLabel = show
         invalidate()
     }
 }

@@ -20,6 +20,7 @@
             tools:context=".ui.activitys.ListsCardsActivity">
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/cd1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -30,6 +31,7 @@
                 app:showSwitch="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/cd2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -40,7 +42,7 @@
                 app:showCheckBox="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
-                android:id="@+id/clc"
+                android:id="@+id/cd3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -51,6 +53,7 @@
                 app:showArrow="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/cd4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -61,16 +64,21 @@
                 app:showRadioBtn="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:id="@+id/cd5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:titleText="My Custom Title"
                 app:supportingText="My Supporting Text"
+                app:cardCornerRadius="10dp"
+                app:showImageCircle="true"
                 app:titleColor="@android:color/holo_blue_dark"
                 app:supportingTextColor="@android:color/darker_gray"
-                app:showRadioBtn="true"/>
+                app:showRadioBtn="true"
+                />
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:id="@+id/cd6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -78,9 +86,11 @@
                 app:supportingText="My Supporting Text"
                 app:titleColor="@android:color/holo_blue_dark"
                 app:supportingTextColor="@android:color/darker_gray"
+                app:showTitleCircle="true"
                 app:showArrow="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:id="@+id/cd7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -88,9 +98,10 @@
                 app:supportingText="My Supporting Text"
                 app:titleColor="@android:color/holo_blue_dark"
                 app:supportingTextColor="@android:color/darker_gray"
-                app:showCheckBox="true" />
+                app:showCheckBox="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:id="@+id/cd8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -101,6 +112,7 @@
                 app:showSwitch="true" />
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard2
+                android:id="@+id/cd9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -110,6 +122,7 @@
                 app:supportingTextColor="@android:color/darker_gray"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:id="@+id/cd10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -119,6 +132,7 @@
                 app:supportingTextColor="@android:color/darker_gray" />
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:id="@+id/cd11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -129,6 +143,7 @@
                 app:showSwitch="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:id="@+id/cd12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -139,6 +154,7 @@
                 app:showRadioBtn="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:id="@+id/cd13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -149,6 +165,7 @@
                 app:showArrow="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard3
+                android:id="@+id/cd14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -161,6 +178,7 @@
 
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/cd15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -173,6 +191,7 @@
                 app:showArrow="true"/>
 
             <com.example.ux4gdesign2.components.listGroup.CustomListCard1
+                android:id="@+id/cd16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

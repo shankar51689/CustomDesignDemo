@@ -31,6 +31,7 @@ class DropdownComponentsActivity : AppCompatActivity() {
         dropdown2.setItems(listOf("Item 1", "Item 2", "Item 3","Item 1", "Item 2", "Item 3","Item 1", "Item 2", "Item 3"))
         dropdown2.setOnItemSelectedListener { selected ->
             Log.i("TaG", "Clicked:2 =-=-=-=-=-==-=-=?> $selected")
+            dropdown2.setText(selected)
             Toast.makeText(this, "Selected: $selected", Toast.LENGTH_SHORT).show()
         }
     }
